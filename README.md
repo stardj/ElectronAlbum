@@ -1,4 +1,4 @@
-# ElectronAlbum 电子相册仓库
+# ElectronAlbum 电子相册
 
 ### 仓库有三个目录，分别为
 
