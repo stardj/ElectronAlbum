@@ -2,10 +2,9 @@
 //  PhotoMapViewController.swift
 //  Images
 //
-//  Created by Kent on 29/12/2017.
-//  Copyright © 2017 V Lanfranchi. All rights reserved.
+//  Created by Lei Zhang on 29/12/2017.
+//  Copyright © 2017 Lei Zhang, Zhiminxing Wang, Yinghui Jiang. All rights reserved.
 //
-
 import UIKit
 import MapKit
 import Photos
@@ -34,100 +33,17 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.assetThumbnailSize = CGSize(width: cellWidth, height: cellHeight)
         self.initCollectionView()
         PHCachingImageManager().startCachingImages(for: self.photoAssets.objects(at: [0, self.photoAssets.count-1]) as! [PHAsset], targetSize: self.assetThumbnailSize, contentMode: .aspectFit, options: nil)
-        //self.initMapView()
-
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(getDataUpdate), name: NSNotification.Name(rawValue: dataModelDidUpdateNotification), object: nil)
-//        ImageViewModel.sharedInstance.requestData()
     }
-    
-    
     
     func initCollectionView(){
         let collectionView =  UICollectionView(frame: CGRect(x: 0, y: self.view.bounds.height - cellHeight, width: self.view.bounds.width, height: cellHeight), collectionViewLayout: PhotoMapCollectionViewFlowLayout())
-        collectionView.backgroundColor = UIColor.groupTableViewBackground// UIColor(displayP3Red: 0.977, green: 0.960, blue: 0.929, alpha: 0.35)
+        collectionView.backgroundColor = UIColor.groupTableViewBackground
         collectionView.dataSource  = self
         collectionView.delegate = self
         collectionView.tag = 1000
         collectionView.register(PhotoMapCollectionViewCell.self, forCellWithReuseIdentifier: self.reuseIdentifier)
         self.collectionView = collectionView
         self.view.addSubview(collectionView)
-    }
-
-    func initMapView(){
-        
-        self.mapView.frame(forAlignmentRect: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height - cellHeight))
-        if (self.photoAssets != nil && self.photoAssets.count != 0 ) {
-            self.photoAssets.enumerateObjects({ (object, count, stop) in
-                let photo:PHAsset = object as! PHAsset
-                let imageSize = CGSize(width: photo.pixelWidth, height: photo.pixelHeight)
-                PHImageManager.default().requestImage(for: photo, targetSize: imageSize, contentMode: .aspectFill, options: nil, resultHandler: {(result, info) in
-                    if result != nil {
-                        let imageManager = PHImageManager.default()
-                        imageManager.requestImageData(for: photo, options: nil, resultHandler:{
-                        (data, responseString, imageOriet, info) -> Void in
-                            let imageData: NSData = data! as NSData
-                            if let imageSource = CGImageSourceCreateWithData(imageData, nil) {
-                                let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil)! as NSDictionary
-                                if imageProperties[self.gpsStr] != nil {
-                                    //self.imageWithMap[String(count)] = result
-                                    print("add\(count)")
-                                    self.numberOfItems += 1
-                                    let annotation = MKPointAnnotation()
-                                    let gps:NSDictionary  = imageProperties[self.gpsStr] as! NSDictionary
-                                    let location = CLLocationCoordinate2DMake(gps[self.latitudeStr] as! CLLocationDegrees,gps[self.longitudeStr] as! CLLocationDegrees)
-                                    //print("=========\(imageProperties)==========")
-                                    annotation.coordinate = location
-                                    annotation.title = "title"
-                                    annotation.subtitle = "subtitle"
-                                    self.mapView.addAnnotation(annotation)
-                                    //                                    
-                                    //if signFirst == false {
-                                    //                                        self.mapView.setRegion(MKCoordinateRegion(center: location, span: MKCoordinateSpanMake(100, 100)), animated: true)
-                                    //                                        
-                                    //  signFirst = true
-                                    //                                    }
-                                    
-                                } else {
-                                    print("empty")
-                                }
-                            }
-                        })
-                        
-                    }
-                })
-                
-            })
-        }
-        
-    }
-    
-    func initImage(){
-        
-        //var images: Array<ImageViewModel> = Array()
-        var images = Dictionary<String, UIImage>()
-        
-        if (self.photoAssets != nil && self.photoAssets.count != 0 ) {
-            self.photoAssets.enumerateObjects({ (object, count, stop) in
-                let photo:PHAsset = object as! PHAsset
-                let imageSize = CGSize(width: photo.pixelWidth, height: photo.pixelHeight)
-                PHImageManager.default().requestImage(for: photo, targetSize: imageSize, contentMode: .aspectFill, options: nil, resultHandler: {(result, info) in
-                    if result != nil {
-                        //print(count)
-                        images[String(count)] = result
-                        
-                    }
-                    
-                })
-                if count == (self.photoAssets.count - 1) {
-                    stop.initialize(to: true)
-                    return
-                }
-            })
-        }
-        
-        //print(images)
-        print(images.count)
     }
     
     override func didReceiveMemoryWarning() {
@@ -146,8 +62,6 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
             locationManager.startUpdatingLocation()
         }
         self.firstCellDefultSelected(selected: true)
-        
-
     }
     
     func showAlert(_ title: String) {
@@ -158,15 +72,11 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
         present(alertController, animated: true, completion: nil)
     }
     
-
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        //print("how many picture\(self.imageWithMap.count)")
         if (self.photoAssetsWithMap != nil){
             return self.photoAssetsWithMap.count
         }
@@ -174,7 +84,6 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let asset: PHAsset = self.photoAssetsWithMap[indexPath.item]
         let cell:PhotoMapCollectionViewCell = (collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as? PhotoMapCollectionViewCell)!
         PHImageManager.default().requestImage(for: asset, targetSize: self.assetThumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: {
