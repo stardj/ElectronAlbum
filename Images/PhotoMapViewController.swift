@@ -196,12 +196,6 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
                     self.mapView.addAnnotation(annotation)
                     cell.imageStr = title
                     cell.location = location
-                        //
-                        //if signFirst == false {
-                        //  self.mapView.setRegion(MKCoordinateRegion(center: location, span: MKCoordinateSpanMake(100, 100)), animated: true)
-                        //
-                        //  signFirst = true
-                        //                                    }
                 })
                 cell.imageView?.image = result
         })
