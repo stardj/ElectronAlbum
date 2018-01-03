@@ -240,18 +240,13 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
         } else {
             cell.imageView?.layer.borderWidth = 1
         }
-//        for anno in self.mapView.annotations {
-//            if (anno.title! == cell.imageStr) {
-        self.mapView.setRegion(MKCoordinateRegion(center: cell.location!, span: MKCoordinateSpanMake(100, 100)), animated: true)
+        self.mapView.setRegion(MKCoordinateRegion(center: cell.location!, span: MKCoordinateSpanMake(180, 180)), animated: true)
         
         for anno in self.mapView.annotations {
             if (anno.title! == cell.imageStr) {
                 self.mapView.selectAnnotation(anno, animated: true)
             }
         }
-//            }
-//        }
-            //
     }
     
 }
