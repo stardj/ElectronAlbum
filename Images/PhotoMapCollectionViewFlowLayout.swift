@@ -14,7 +14,6 @@ class PhotoMapCollectionViewFlowLayout: UICollectionViewFlowLayout {
     var itemH: CGFloat = 100
     
     lazy var inset: CGFloat = {
-
         return  (self.collectionView?.bounds.width ?? 0)  * 0.5 - self.itemSize.width * 0.5
     }()
     

@@ -117,7 +117,7 @@ class ImagesCollectionViewController: UICollectionViewController, UIImagePickerC
             }
         }
         
-        // go to photo map        
+        //Go to photo map view
         if segue.identifier == "photoMap" {
             if let nextVC = segue.destination as? PhotoMapViewController {
                 //nextVC.cameraRoll = self.cameraRoll
@@ -125,12 +125,11 @@ class ImagesCollectionViewController: UICollectionViewController, UIImagePickerC
                 nextVC.photoAssetsWithMap = self.photoAssetsWithMap
                 
             }
-            print("go to map")
-            
         }
         
     }
     
+    //Get all picture asset including location info
     func getAssetWithMap() -> [PHAsset]{
         var assetArray = [PHAsset]()
         self.photoAssets.enumerateObjects({ (object, count, stop) in
@@ -149,7 +148,7 @@ class ImagesCollectionViewController: UICollectionViewController, UIImagePickerC
                             if imageProperties["{GPS}"] != nil {
                                 assetArray.append(photo)
                             } else {
-                                //print("empty")
+                                
                             }
                         }
                     })

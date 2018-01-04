@@ -33,7 +33,6 @@ class PhotoDetailsViewController: UIViewController {
                         let imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil)! as NSDictionary
                         self.metadataTextView.text = imageProperties.description
                         self.showMapInfo(imageProperties: imageProperties)
-                        print(imageProperties.description)
                     }
                 })
                 
@@ -43,14 +42,12 @@ class PhotoDetailsViewController: UIViewController {
         
     }
     
+    //Show map in picture detail
     func showMapInfo(imageProperties:NSDictionary) {
         if imageProperties["{GPS}"] != nil {
             let annotation = MKPointAnnotation()
-            //print(self.photo.location)
-            //location(gps["Latitude"], gps["Longitude"])
             let gps:NSDictionary  = imageProperties["{GPS}"] as! NSDictionary
             let location = CLLocationCoordinate2DMake(gps["Latitude"] as! CLLocationDegrees,gps["Longitude"] as! CLLocationDegrees)
-            //print(imageProperties)
             annotation.coordinate = location
             annotation.title = "kkk"
             annotation.subtitle = "..."

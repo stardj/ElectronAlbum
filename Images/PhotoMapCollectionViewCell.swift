@@ -20,7 +20,6 @@ class PhotoMapCollectionViewCell: UICollectionViewCell {
         self.imageView = UIImageView()
         self.imageView?.layer.borderColor = UIColor.white.cgColor;
         self.imageView?.layer.borderWidth = 1;
-        //self.imageView?.layer.cornerRadius = 3;
         self.imageView?.clipsToBounds = true;
         
         self.addSubview(self.imageView!)

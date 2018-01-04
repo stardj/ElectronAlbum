@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Images/PhotoMapViewController.swift"
-            timestampString = "536645816.097869"
+            timestampString = "536789290.622432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "firstCellDefultSelected(selected:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Images/PhotoMapViewController.swift"
-            timestampString = "536645816.097869"
+            timestampString = "536789290.622432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "firstCellDefultSelected(selected:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,123 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Images/PhotoMapViewController.swift"
-            timestampString = "536645816.097869"
+            timestampString = "536789290.622432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Images/PhotoMapViewController.swift"
-            timestampString = "536645816.097869"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "initMapView()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Images.PhotoMapViewController.initMapView () -&gt; Swift.Dictionary&lt;Swift.String, __ObjC.UIImage&gt;"
-                  moduleName = "Images"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kent/Project/Archive/Images/PhotoMapViewController.swift"
-                  timestampString = "536628965.219315"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "62">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Images.PhotoMapViewController.(initMapView () -&gt; Swift.Dictionary&lt;Swift.String, __ObjC.UIImage&gt;).(closure #1)"
-                  moduleName = "Images"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kent/Project/Archive/Images/PhotoMapViewController.swift"
-                  timestampString = "536628965.22656"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Images.PhotoMapViewController.(initMapView () -&gt; Swift.Dictionary&lt;Swift.String, __ObjC.UIImage&gt;).(closure #1).(closure #1)"
-                  moduleName = "Images"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kent/Project/Archive/Images/PhotoMapViewController.swift"
-                  timestampString = "536628965.232352"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "45">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Images.PhotoMapViewController.(initMapView () -&gt; Swift.Dictionary&lt;Swift.String, __ObjC.UIImage&gt;).(closure #1).(closure #1).(closure #1)"
-                  moduleName = "Images"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kent/Project/Archive/Images/PhotoMapViewController.swift"
-                  timestampString = "536628965.235244"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "100">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Images/PhotoMapViewController.swift"
-            timestampString = "536645816.097869"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "initMapView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Images/PhotoMapViewController.swift"
-            timestampString = "536645816.097869"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "initMapView()"
-            landmarkType = "7">
+            startingLineNumber = "242"
+            endingLineNumber = "242">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

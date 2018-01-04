@@ -138,7 +138,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Photo Map" id="Mwn-L6-wQ9"/>
+                    <navigationItem key="navigationItem" title="Photo Map" id="Mwn-L6-wQ9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="KPw-Xf-js5">
+                            <connections>
+                                <action selector="searchBtn:" destination="gj7-JL-kRL" id="bgS-ab-MY4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Bxf-Hp-u3s" id="7Kc-16-ezh"/>
                     </connections>
