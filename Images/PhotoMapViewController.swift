@@ -15,7 +15,6 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
     var collectionView: UICollectionView!
     var photoAssets: PHFetchResult<AnyObject>!
     var numberOfItems: Int = 0
-    var imageWithMap: Dictionary<String, UIImage>!
     var photoAssetsWithMap: [PHAsset]!
     var annotationPreSearch:MKPointAnnotation!
     var assetThumbnailSize: CGSize!
@@ -155,10 +154,17 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
     //Show pictures in the collection view
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:PhotoMapCollectionViewCell = (collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as? PhotoMapCollectionViewCell)!
+        self.addLocationInfo(cell: cell, asset: self.photoAssetsWithMap[indexPath.item])
+        return cell
+    }
+
+    //Add locations for pictures in the map
+    func addLocationInfo(cell: PhotoMapCollectionViewCell, asset: PHAsset) {
         if (self.photoAssetsWithMap != nil) {
-            let asset: PHAsset = self.photoAssetsWithMap[indexPath.item]
+            let asset: PHAsset = asset
             PHImageManager.default().requestImage(for: asset, targetSize: self.assetThumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: {
                 (result, info) in
+                var imageVModel = ImageViewModel()
                 let imageManager = PHImageManager.default()
                 imageManager.requestImageData(for: asset, options: nil, resultHandler:{
                     (data, responseString, imageOriet, info) -> Void in
@@ -174,14 +180,17 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
                     annotation.subtitle = "subtitle"
                     self.mapView.addAnnotation(annotation)
                     cell.imageStr = title
-                    cell.location = location
+                    imageVModel.title = title!
+                    imageVModel.location = location
                 })
-                cell.imageView?.image = result
+                imageVModel.image = result!
+                cell.imageView?.image = imageVModel.image
+                cell.imageVModel = imageVModel
             })
         }
-        return cell
     }
-
+    
+    
     //Adjust the layout position when in different transition
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -195,9 +204,9 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.firstCellDefultSelected(selected: false)
         let cell:PhotoMapCollectionViewCell = collectionView.cellForItem(at: indexPath) as! PhotoMapCollectionViewCell
         cell.imageView?.layer.borderWidth = 5
-        self.mapView.setRegion(MKCoordinateRegion(center: cell.location!, span: MKCoordinateSpanMake(100, 100)), animated: true)
+        self.mapView.setRegion(MKCoordinateRegion(center: (cell.imageVModel?.location)!, span: MKCoordinateSpanMake(100, 100)), animated: true)
         for anno in self.mapView.annotations {
-            if (anno.title! == cell.imageStr) {
+            if (anno.title! == cell.imageVModel?.title) {
                 self.mapView.selectAnnotation(anno, animated: true)
             }
         }
@@ -205,11 +214,13 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     //Define the layout when unselecting a cell
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell:PhotoMapCollectionViewCell = collectionView.cellForItem(at: indexPath) as! PhotoMapCollectionViewCell
-        cell.imageView?.layer.borderWidth = 1
-        for anno in self.mapView.annotations {
-            if (anno.title! == cell.imageStr) {
-                self.mapView.selectAnnotation(anno, animated: false)
+        if collectionView.cellForItem(at: indexPath) != nil{
+            let cell:PhotoMapCollectionViewCell = collectionView.cellForItem(at: indexPath) as! PhotoMapCollectionViewCell
+            cell.imageView?.layer.borderWidth = 1
+            for anno in self.mapView.annotations {
+                if (anno.title! == cell.imageStr) {
+                    self.mapView.selectAnnotation(anno, animated: false)
+                }
             }
         }
     }
@@ -217,17 +228,19 @@ class PhotoMapViewController: UIViewController, UICollectionViewDelegate, UIColl
     //Define the event for the first cell default selected
     func firstCellDefultSelected(selected:Bool){
         let indexPathFirstCell = IndexPath(row: 0, section: 0)
-        let cell:PhotoMapCollectionViewCell = collectionView.cellForItem(at: indexPathFirstCell) as! PhotoMapCollectionViewCell
-        if selected == true {
-            cell.imageView?.layer.borderWidth = 5
-        } else {
-            cell.imageView?.layer.borderWidth = 1
-        }
-        self.mapView.setRegion(MKCoordinateRegion(center: cell.location!, span: MKCoordinateSpanMake(180, 180)), animated: true)
-        
-        for anno in self.mapView.annotations {
-            if (anno.title! == cell.imageStr) {
-                self.mapView.selectAnnotation(anno, animated: true)
+        if collectionView.cellForItem(at: indexPathFirstCell) != nil {
+            let cell:PhotoMapCollectionViewCell = collectionView.cellForItem(at: indexPathFirstCell) as! PhotoMapCollectionViewCell
+            if selected == true {
+                cell.imageView?.layer.borderWidth = 5
+            } else {
+                cell.imageView?.layer.borderWidth = 1
+            }
+            let location = cell.imageVModel?.location
+            self.mapView.setRegion(MKCoordinateRegion(center: location!, span: MKCoordinateSpanMake(180, 180)), animated: true)
+            for anno in self.mapView.annotations {
+                if (anno.title! == cell.imageVModel?.title) {
+                    self.mapView.selectAnnotation(anno, animated: true)
+                }
             }
         }
     }

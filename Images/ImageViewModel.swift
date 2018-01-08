@@ -9,46 +9,97 @@
 import Foundation
 import Photos
 
-class ImageViewModel {
+class ImageViewModel: NSObject {
     
-//    static var sharedInstance = ImageViewModel()
-//    let dataModelDidUpdateNotification = "dataModelDidUpdateNotification"
-//    
-//    private init() { }
-//    
-//    private (set) var name: String?	{
-//        didSet {
-//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: dataModelDidUpdateNotification), object: nil)
-//        }
-//    }
-//    
-//    func requestData() {
-//        self.name = "Data from wherever"
-//    }
-//    
-//    private func getDataUpdate() {
-//        //if let data = ImageViewModel.sharedInstance.data {
-//            //print(data)
-//        }
-//    }
-
+    var _id: Int = 0
+    var id: Int {
+        get{
+            return _id
+        }
+        set{
+            _id = newValue
+        }
+    }
     
+    var _name: String?
     var name: String? {
-        get {
-            return self.name
+        get{
+            return _name
         }
-        set {
-            self.name = newValue
+        set{
+            _name = newValue
         }
     }
     
+    var _title: String?
+    var title: String? {
+        get{
+            return _title
+        }
+        set{
+            _title = newValue
+        }
+    }
+    
+    var _date: Date?
+    var date: Date? {
+        get{
+            return _date
+        }
+        set{
+            _ = date = newValue
+        }
+    }
+    
+    var _latitude: CLLocationDegrees?
+    var latitude: CLLocationDegrees? {
+        get{
+            return _latitude
+        }
+        set{
+            _latitude = newValue
+        }
+    }
+    
+    var _longitude: CLLocationDegrees?
+    var longitude: CLLocationDegrees? {
+        get{
+            return _longitude
+        }
+        set{
+            _longitude = newValue
+        }
+    }
+    
+    var _image: UIImage?
     var image: UIImage? {
-        get {
-            return self.image
+        get{
+            return _image
         }
-        set {
-            self.image = newValue
+        set{
+            _image = newValue
         }
     }
     
+    var _location: CLLocationCoordinate2D?
+    var location: CLLocationCoordinate2D? {
+        get{
+            return _location
+        }
+        set{
+            _location = newValue
+        }
+    }
+    
+    var _desc: UIImage?
+    var desc: UIImage? {
+        get{
+            return _desc
+        }
+        set{
+            _desc = newValue
+        }
+    }
+    
+
 }

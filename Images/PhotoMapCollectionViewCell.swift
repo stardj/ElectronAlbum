@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import MapKit
 
 class PhotoMapCollectionViewCell: UICollectionViewCell {
     
     var imageView: UIImageView?
     var imageStr: String?
-    var location: CLLocationCoordinate2D?
+    var imageVModel: ImageViewModel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
