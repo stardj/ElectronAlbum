@@ -307,7 +307,7 @@ class ImagesCollectionViewController: UICollectionViewController, UIImagePickerC
         if let media = media {
             for photo in media {
                 body.append("--\(boundary + lineBreak)")
-                body.append("Content-Disposition: form-data; name=\"\(photo.key)\"; filename=\"\(photo.filename)\"\(lineBreak)")
+                body.append("Content-Disposition: form-data; name=\"\(photo.key)\"; filename=\"\(photo.key)\"\(lineBreak)")
                 body.append("Content-Type: \(photo.mimeType + lineBreak + lineBreak)")
                 body.append(photo.data)
                 body.append(lineBreak)
