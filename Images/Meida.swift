@@ -14,10 +14,10 @@ struct Media {
     let data: Data
     let mimeType: String
     
-    init?(withImage image: UIImage, forKey filename: String) {
-        self.key = filename
+    init?(withImage image: UIImage, forKey key: String) {
+        self.key = key
         self.mimeType = "image/png"
-        self.filename = filename
+        self.filename = "sheffied.jpg"
         guard let data = UIImagePNGRepresentation(image) else { return nil }
         self.data = data
     }

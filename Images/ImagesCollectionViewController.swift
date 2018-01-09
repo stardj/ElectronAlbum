@@ -249,7 +249,7 @@ class ImagesCollectionViewController: UICollectionViewController, UIImagePickerC
             var imgInfo = para.value as! [String : Any]
             let parametersImg = imgInfo.remove(at: (imgInfo.index(forKey: "Image"))!)
             let image = parametersImg.value
-            guard let mediaImage = Media(withImage: image as! UIImage, forKey: imgInfo["Title"] as! String) else { return }
+            guard let mediaImage = Media(withImage: image as! UIImage, forKey: "image") else { return }
             dataBody = createDataBody(params: (imgInfo as! [String : String]), media: [mediaImage], boundary: boundary)
             request.httpBody = dataBody
             let session = URLSession.shared
