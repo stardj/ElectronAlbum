@@ -13,6 +13,7 @@
 		37077B1A1FF6A947001B6EF1 /* PhotoMapCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37077B191FF6A947001B6EF1 /* PhotoMapCollectionViewFlowLayout.swift */; };
 		37605A531FFBEF270071E59B /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37605A521FFBEF270071E59B /* ImageViewModel.swift */; };
 		3762BBD11FEC6CA600C707C0 /* MapPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3762BBD01FEC6CA600C707C0 /* MapPhotoViewController.swift */; };
+		37940EF12004438100D10409 /* Meida.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37940EF02004438100D10409 /* Meida.swift */; };
 		5825BAC61FBCCC010019AA54 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5825BAC51FBCCC010019AA54 /* PhotoCollectionViewCell.swift */; };
 		58E893181FBCAFA200041B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E893171FBCAFA200041B33 /* AppDelegate.swift */; };
 		58E8931A1FBCAFA200041B33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E893191FBCAFA200041B33 /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		37077B191FF6A947001B6EF1 /* PhotoMapCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoMapCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		37605A521FFBEF270071E59B /* ImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
 		3762BBD01FEC6CA600C707C0 /* MapPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapPhotoViewController.swift; path = ../MapPhotoViewController.swift; sourceTree = "<group>"; };
+		37940EF02004438100D10409 /* Meida.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meida.swift; sourceTree = "<group>"; };
 		5825BAC51FBCCC010019AA54 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCollectionViewCell.swift; path = ../PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		58E893141FBCAFA200041B33 /* Images.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Images.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E893171FBCAFA200041B33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,11 +119,12 @@
 		58E893161FBCAFA200041B33 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				5825BAC51FBCCC010019AA54 /* PhotoCollectionViewCell.swift */,
 				58E893171FBCAFA200041B33 /* AppDelegate.swift */,
 				58E893191FBCAFA200041B33 /* ViewController.swift */,
 				58E893481FBCB29600041B33 /* ImagesCollectionViewController.swift */,
+				37940EF02004438100D10409 /* Meida.swift */,
 				58E8934A1FBCB42000041B33 /* PhotoDetailsViewController.swift */,
+				5825BAC51FBCCC010019AA54 /* PhotoCollectionViewCell.swift */,
 				3703BD451FE7C96F0034F886 /* MapViewController.swift */,
 				3762BBD01FEC6CA600C707C0 /* MapPhotoViewController.swift */,
 				58E8931B1FBCAFA200041B33 /* Main.storyboard */,
@@ -293,6 +296,7 @@
 				58E893491FBCB29600041B33 /* ImagesCollectionViewController.swift in Sources */,
 				58E8934B1FBCB42000041B33 /* PhotoDetailsViewController.swift in Sources */,
 				37077B1A1FF6A947001B6EF1 /* PhotoMapCollectionViewFlowLayout.swift in Sources */,
+				37940EF12004438100D10409 /* Meida.swift in Sources */,
 				58E893201FBCAFA200041B33 /* Images.xcdatamodeld in Sources */,
 				58E8931A1FBCAFA200041B33 /* ViewController.swift in Sources */,
 				37605A531FFBEF270071E59B /* ImageViewModel.swift in Sources */,

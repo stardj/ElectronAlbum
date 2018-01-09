@@ -12,4 +12,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet weak var photoView: UIImageView!
+    
+    var imageVModel: ImageViewModel?
 }

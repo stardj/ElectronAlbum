@@ -35,8 +35,6 @@ class PhotoDetailsViewController: UIViewController {
                         self.showMapInfo(imageProperties: imageProperties)
                     }
                 })
-                
-                
             }
         })
         
@@ -55,8 +53,6 @@ class PhotoDetailsViewController: UIViewController {
             let region = MKCoordinateRegion(center: location, span: span)
             self.mapView.addAnnotation(annotation)
             self.mapView.setRegion(region, animated: true)
-            print(annotation.coordinate.latitude)
-            print(annotation.coordinate.longitude)
         } else {
             self.mapView.isHidden = true
         }
