@@ -35,12 +35,9 @@ class ImagesCollectionViewController: UICollectionViewController, UIImagePickerC
             self.selectedSign = true
             self.selectedBtn.title = "Upload"
         } else {
-            self.selectedSign = false
-            self.selectedBtn.title = "Select"
             print(selectedPhotos)
             self.uploadPictures()
-            collectionView?.reloadData()
-            self.selectedPhotos.removeAll()
+            //self.selectedPhotos.removeAll()
         }
     }
     
@@ -94,6 +91,7 @@ class ImagesCollectionViewController: UICollectionViewController, UIImagePickerC
         else if photoAuth == .authorized {
             self.loadPhotos()
         }
+        self.uploadingIndicator.isHidden = true
     }
     
     private func loadPhotos() {
@@ -238,7 +236,8 @@ class ImagesCollectionViewController: UICollectionViewController, UIImagePickerC
     
     //Upload pictures
     func uploadPictures(){
-        uploadingIndicator.startAnimating()
+        self.uploadingIndicator.isHidden = false
+        self.uploadingIndicator.startAnimating()
         guard let url = URL(string: "http://wesenseit-vm1.shef.ac.uk:8091/uploadImages/") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -265,6 +264,9 @@ class ImagesCollectionViewController: UICollectionViewController, UIImagePickerC
                             self.uploadingIndicator.stopAnimating()
                             self.uploadingIndicator.isHidden = true
                             self.showAlert("Uploading succeeded!")
+                            self.selectedSign = false
+                            self.selectedBtn.title = "Select"
+                            self.collectionView?.reloadData()
                         })
                     } catch {
                         print(error)
