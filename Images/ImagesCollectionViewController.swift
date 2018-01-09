@@ -238,6 +238,7 @@ class ImagesCollectionViewController: UICollectionViewController, UIImagePickerC
     func uploadPictures(){
         self.uploadingIndicator.isHidden = false
         self.uploadingIndicator.startAnimating()
+        self.view.isUserInteractionEnabled = false
         guard let url = URL(string: "http://wesenseit-vm1.shef.ac.uk:8091/uploadImages/") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -267,6 +268,7 @@ class ImagesCollectionViewController: UICollectionViewController, UIImagePickerC
                             self.selectedSign = false
                             self.selectedBtn.title = "Select"
                             self.collectionView?.reloadData()
+                            self.view.isUserInteractionEnabled = true
                         })
                     } catch {
                         print(error)
