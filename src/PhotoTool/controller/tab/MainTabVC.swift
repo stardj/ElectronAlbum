@@ -43,7 +43,7 @@ class MainTabVC: CustomTabBarController, UITabBarControllerDelegate {
     
     func setBarItems() {
         delegate = self
-        guard let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GridShowVC") as? GridShowVC else {
+        guard let vc1 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as? HomeVC else {
             return
         }
         let nvc1 = UINavigationController()
@@ -51,33 +51,21 @@ class MainTabVC: CustomTabBarController, UITabBarControllerDelegate {
         vc1.setInfo(showType: .normal, sortType: .time)
         vc1.setTabBarItem(tag: 0, titleStr: "首页", titleSelecteColor: "1bcd99", defaultImageStr: getImgStr(name: "icon_index_h"), selectImageStr: getImgStr(name:"icon_index"))
         
-        guard let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondItemVC") as? SecondItemVC else {
+        guard let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapVC") as? MapVC else {
             return
         }
         let nvc2 = UINavigationController()
         nvc2.pushViewController(vc2, animated: true)
         vc2.setTabBarItem(tag: 1, titleStr: PageTitle.Map, titleSelecteColor: "E1F6FA", defaultImageStr: getImgStr(name: "icon_qyq_h"), selectImageStr: getImgStr(name:"icon_qyq"))
         
-        guard let vc3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThirdItemVC") as? ThirdItemVC else {
+        guard let vc3 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlbumVC") as? AlbumVC else {
             return
         }
         let nvc3 = UINavigationController()
         nvc3.pushViewController(vc3, animated: true)
         vc3.setTabBarItem(tag: 2, titleStr: PageTitle.Album, titleSelecteColor: "E1F6FA", defaultImageStr: getImgStr(name: "icon_qyq_h"), selectImageStr: getImgStr(name:"icon_qyq"))
         
-        guard let vc4 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FourItemVC") as? FourItemVC else {
-            return
-        }
-        let nvc4 = UINavigationController()
-        nvc4.pushViewController(vc4, animated: true)
-        vc4.setTabBarItem(tag: 3, titleStr: PageTitle.Me, titleSelecteColor: "E1F6FA", defaultImageStr: getImgStr(name: "icon_qyq_h"), selectImageStr: getImgStr(name:"icon_qyq"))
-        
-        let vc5 = FifVC()
-        let nvc5 = UINavigationController()
-        nvc5.pushViewController(vc5, animated: true)
-        vc5.setTabBarItem(tag: 4, titleStr: "照相", titleSelecteColor: "E1F6FA", defaultImageStr: getImgStr(name: "icon_qyq_h"), selectImageStr: getImgStr(name:"icon_qyq"))
-        
-        self.viewControllers = [nvc1,nvc3,nvc2,nvc4]
+        self.viewControllers = [nvc1,nvc3,nvc2]
     }
 
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {

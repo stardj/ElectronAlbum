@@ -1,5 +1,5 @@
 //
-//  GridShowVC.swift
+//  HomeVC.swift
 //  PhotoTool
 //
 //  Created by 江荧辉 on 2017/12/16.
@@ -15,9 +15,9 @@ struct PageTitle {
     static let Me = "Me"
 }
 
-class GridShowVC: TakePhotoVC, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, WaterFallLayoutDelegate {
+class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, WaterFallLayoutDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     fileprivate lazy var cellSize:CGSize = {
-        let picWidth: CGFloat = DeviceInfo.ScreenWidth*0.25
+        let picWidth: CGFloat = DeviceInfo.isPad ? DeviceInfo.ScreenWidth*0.16 : DeviceInfo.ScreenWidth*0.25
         return CGSize(width: picWidth, height: picWidth*1.25)
     }()
     
@@ -48,27 +48,11 @@ class GridShowVC: TakePhotoVC, UICollectionViewDelegate, UICollectionViewDataSou
         return btnItem
     }()
     
-    fileprivate lazy var deleteBtn: UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = ColorsAry.colorMe
-        btn.setTitle("DELETE", for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 24)
-        btn.addTarget(self, action: #selector(deleteBtnClick), for: .touchUpInside)
-        
-        self.view.addSubview(btn)
-        let width = NSLayoutConstraint(item: btn, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 1, constant: 0)
-        let height = NSLayoutConstraint(item: btn, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 60)
-        let right = NSLayoutConstraint(item: btn, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
-        let bottom = NSLayoutConstraint(item: btn, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1, constant: 0)
-        btn.superview?.addConstraint(width)
-        btn.addConstraint(height)
-        btn.superview?.addConstraint(right)
-        btn.superview?.addConstraint(bottom)
-        return btn
-    }()
+    @IBOutlet weak var uploadBtn: UIButton!
+    @IBOutlet weak var deleteBtn: UIButton!
+    @IBOutlet weak var bottomView: UIView!
     
-    @objc fileprivate func deleteBtnClick() {
+    @IBAction func deleteBtnClick(_ sender: UIButton) {
         SystemPhotoManager.share.deletePhotos(deleteId: chooseAry) {[weak self] (status) in
             guard let weakself = self else { return }
             DispatchQueue.main.async {
@@ -80,6 +64,10 @@ class GridShowVC: TakePhotoVC, UICollectionViewDelegate, UICollectionViewDataSou
                 }
             }
         }
+    }
+    
+    @IBAction func uploadBtnClick(_ sender: UIButton) {
+        
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -99,17 +87,7 @@ class GridShowVC: TakePhotoVC, UICollectionViewDelegate, UICollectionViewDataSou
         navigationItem.leftBarButtonItems = [leftBtn]
         chooseBtn.title = "choose"
         navigationItem.rightBarButtonItems = [photoBtn, chooseBtn, searchBtn]
-        
-//        SystemPhotoManager.share.synchroPhotos() {[weak self]
-//            (status, update) in
-//            guard let weakself = self else { return }
-//            if status && update{
-//                DispatchQueue.main.async {
-//                    weakself.initData()
-//                    weakself.collectionView.reloadData()
-//                }
-//            }
-//        }
+
     }
     
     @objc fileprivate func searchBtnClick() {
@@ -124,12 +102,12 @@ class GridShowVC: TakePhotoVC, UICollectionViewDelegate, UICollectionViewDataSou
 
         if getIsChooseMode() {
             chooseBtn.title = "choose"
-            deleteBtn.isHidden = true
+            bottomView.isHidden = true
             navigationItem.rightBarButtonItems = [photoBtn, chooseBtn, searchBtn]
             NotificationCenter.default.post(name: NSNotification.Name.init(PhotoNotiFicationName.HidiBottomBar), object: nil, userInfo: ["isHide": false])
         } else {
             chooseBtn.title = "Cancle"
-            deleteBtn.isHidden = false
+            bottomView.isHidden = false
             navigationItem.rightBarButtonItems = [chooseBtn]
             NotificationCenter.default.post(name: NSNotification.Name.init(PhotoNotiFicationName.HidiBottomBar), object: nil, userInfo: ["isHide": true])
         }
@@ -172,7 +150,39 @@ class GridShowVC: TakePhotoVC, UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     // TakePhoto Finished
-    override func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: AnyObject) {
+    
+    @objc func takePhotoBtnClick() {
+        if !SystemPhotoManager.share.isRightCamera() {
+            showAlert(title: "ERROR", message: "Open the use of album permissions to settings", buttonTitle: "OK")
+            return
+        }
+        let imagePicker = UIImagePickerController()
+        //设置代理
+        imagePicker.delegate = self
+        //允许编辑
+        imagePicker.allowsEditing = true
+        //设置图片来源
+        imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+        //模态弹出ImagePickerView
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    //取消
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    //实现UIimagePickerDelegate代理方法
+    //UIImagePicker回调
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let image = (info as NSDictionary).object(forKey: UIImagePickerControllerEditedImage) as? UIImage else {
+            return
+        }
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: AnyObject) {
         SystemPhotoManager.share.synchroPhotos {[weak self] (status, _) in
             guard let weakself = self else { return }
             if status {
@@ -296,48 +306,3 @@ class GridShowVC: TakePhotoVC, UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
-class TakePhotoVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    @objc func takePhotoBtnClick() {
-        if !SystemPhotoManager.share.isRightCamera() {
-            showAlert(title: "ERROR", message: "Open the use of album permissions to settings", buttonTitle: "OK")
-            return
-        }
-        let imagePicker = UIImagePickerController()
-        //设置代理
-        imagePicker.delegate = self
-        //允许编辑
-        imagePicker.allowsEditing = true
-        //设置图片来源
-        imagePicker.sourceType = UIImagePickerControllerSourceType.camera
-        //模态弹出ImagePickerView
-        self.present(imagePicker, animated: true, completion: nil)
-    }
-    
-    //取消
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    //实现UIimagePickerDelegate代理方法
-    //UIImagePicker回调
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let image = (info as NSDictionary).object(forKey: UIImagePickerControllerEditedImage) as? UIImage else {
-            return
-        }
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    @objc func image(image:UIImage,didFinishSavingWithError error:NSError?,contextInfo:AnyObject) {
-    }
-    
-    //保存图片到沙盒方法
-    func saveImage(_ currentImage:UIImage,imageName:String) {
-        var imageData = Data()
-        imageData = UIImageJPEGRepresentation(currentImage, 0.5)!
-        //获取沙盒目录
-        let fullPath = ((NSHomeDirectory() as NSString).appendingPathComponent("Documents") as NSString).appendingPathComponent(imageName)
-        // 将图片写入文件
-        try? imageData.write(to: URL(fileURLWithPath: fullPath), options: [])
-    }
-}

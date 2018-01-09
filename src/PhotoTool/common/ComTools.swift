@@ -44,7 +44,7 @@ class DateTools {
 
 class Tools {
     class func getImage(timeStamp: Int, isThumbnail: Bool) -> UIImage {
-        //set the default image to avoid value error
+        //设置默认图片,避免读出图片数据有误
         //        self.image=UIImage(named: "2")
         if let data = YHJImgCacheCenter.readImgFromCache(timeStamp: timeStamp, isThumbnail: isThumbnail) {
             return UIImage(data: data) ?? UIImage(named: "errorImg")!

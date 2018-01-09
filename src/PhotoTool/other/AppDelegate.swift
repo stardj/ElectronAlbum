@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.isIdleTimerDisabled = true
         window?.backgroundColor = UIColor.white
         _ = db.openDB(copyFile:false)
+        
+        SystemPhotoManager.share.synchroPhotos(block: { (_, _) in })
         return true
     }
 

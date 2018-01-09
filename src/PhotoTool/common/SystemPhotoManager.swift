@@ -30,7 +30,6 @@ class AlbumItem {
 class SystemPhotoManager {
     static let share: SystemPhotoManager = SystemPhotoManager()
     /// 带缓存的图片管理对象
-    var imageCacheManager: PHCachingImageManager!
     let imgMg = PHImageManager()
     
     // 相机权限
@@ -172,7 +171,7 @@ class SystemPhotoManager {
         
         if let addr = asset.location {
             locationToCity(currLocation: addr, block: { (city) in
-                let post = "\(addr.coordinate.latitude),\(addr.coordinate.longitude)"
+                let post = "\(Int(addr.coordinate.latitude)),\(Int(addr.coordinate.longitude))"
 
                 let photo = PhotoModel(id: timeStamp, name: imgName, dateTime: DateTools.dateToStr(date: date), addr: city ?? "", position: post, desc: "")
                 block(photo)

@@ -16,13 +16,13 @@ class PhotoHttpManager: NSObject {
         var string = "json="
         
         let Str = String(data: data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
-        //append the string
+        //拼接
         string = string + Str!
         let Url = URL.init(string: "http://facaiyoudao.com/api/user/login")
         
         let request = NSMutableURLRequest.init(url: Url!)
         request.timeoutInterval = 30
-        //sent function is same to the OC way
+        //请求方式，跟OC一样的
         request.httpMethod = "POST"
         request.httpBody = string.data(using: String.Encoding.utf8)
         
@@ -32,7 +32,7 @@ class PhotoHttpManager: NSObject {
                 return
             }
             else {
-                //analysis method
+                //此处是具体的解析，具体请移步下面
                 let json: Any = try! JSONSerialization.jsonObject(with: data!, options: [])
 //                print(json)
             }

@@ -99,7 +99,6 @@ class CountrySearBar: UISearchBar {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.placeholder = "搜索"
-//        self.backgroundImage = UIImage(named: "bg_top_blue")
         self.barTintColor = ColorsAry.colorBlack6
 //        self.backgroundColor = ColorsAry.lightSonghall
         

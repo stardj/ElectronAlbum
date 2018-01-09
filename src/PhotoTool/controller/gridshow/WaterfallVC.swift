@@ -117,20 +117,6 @@ class WaterfallVC: UIViewController, UICollectionViewDataSource, WaterFallLayout
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if getIsChooseMode() {
-//            if let cell = collectionView.cellForItem(at: indexPath) as? ImageCellWithSelected {
-//                cell.setSelected(isSelect: cell.tickImg.isHidden)
-//                let photoId = photoAry[indexPath.row].id
-//                if cell.tickImg.isHidden {
-//                    if let index = chooseAry.index(of: photoId) {
-//                        chooseAry.remove(at: index)
-//                    }
-//                } else {
-//                    chooseAry.append(photoId)
-//                }
-//            }
-//            return
-//        }
         guard let browserVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoBrowserVC") as? PhotoBrowserVC else { return }
         browserVC.setImgAry(ary: photoAry, index: indexPath.row)
         self.present(browserVC, animated: true, completion: nil)

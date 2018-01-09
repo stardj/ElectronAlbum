@@ -28,12 +28,11 @@ class DetailView: UIView, UIScrollViewDelegate, UITextFieldDelegate, MKMapViewDe
         dateLabel.text = photo.dateTime
         
         if let pose = photo.getPosition() {
-            let p = PhotoAnnoation.init(coordinate: pose)
+            let p = PhotoAnnoation.init(coordinate: pose, photoId: photo.id, title: photo.addr)
             p.photoId = photo.id
             mapView.addAnnotation(p)
             addrLabel.text = "(\(photo.addr))"
             mapView.region = MKCoordinateRegionMake(pose, MKCoordinateSpanMake(0.5, 0.5))
-
         } else {
             addrLabel.text = "(This picture has no address information)"
         }

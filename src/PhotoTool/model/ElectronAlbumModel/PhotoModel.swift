@@ -18,7 +18,7 @@ class PhotoModel: SQLTable {
     var desc = ""
 
     required init() { super.init() }
-    convenience init(id: Int, name: String, dateTime: String, addr: String, position: String, desc: String?=nil) {
+    convenience init(id: Int, name: String, dateTime: String, addr: String, position: String, desc: String="") {
         self.init()
         self.id = id
         self.name = name
@@ -26,7 +26,7 @@ class PhotoModel: SQLTable {
         self.dateTime = dateTime
         self.addr = addr
         self.position = position
-        self.desc = desc ?? ""
+        self.desc = desc
     }
     
     func getPosition() -> CLLocationCoordinate2D? {
@@ -39,5 +39,46 @@ class PhotoModel: SQLTable {
     
     override var description:String {
         return "id: \(id), name: \(name), dateTime: \(dateTime), addr: \(addr), position: \(position), desc: \(desc)\n"
+    }
+}
+
+
+enum CollectionViewShowType: UInt {
+    case normal
+    case waterfall
+}
+
+enum SortType: UInt {
+    case time
+    case local
+}
+
+enum CellType: Int {
+    case group
+    case photo
+}
+class BaseGroup: NSObject {
+    var sortType: SortType = .time
+    var groupTitle = ""
+    var photos: [PhotoModel?] = []
+    override init() { super.init() }
+    convenience init(sortType: SortType, groupTitle: String, photos: [PhotoModel?]) {
+        self.init()
+        self.sortType = sortType
+        self.groupTitle = groupTitle
+        self.photos = photos
+    }
+}
+
+class FirstVCGroup: BaseGroup {
+    var color: String = ""
+    
+    //    override init(sortType: SortType, groupTitle: String, photos: [PhotoModel?]) {
+    //        super.init(sortType: sortType, groupTitle: groupTitle, photos: photos)
+    //    }
+    
+    convenience init(sortType: SortType, groupTitle: String, photos: [PhotoModel?], color: String) {
+        self.init(sortType: sortType, groupTitle: groupTitle, photos: photos)
+        self.color = color
     }
 }

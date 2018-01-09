@@ -11,21 +11,27 @@ import Foundation
 
 extension UIImageView {
     /**
-     *  read images by time
+     *根据时间戳，读出图片
      */
     func setImage(timeStamp: Int, isThumbnail: Bool) {
-        //  set defualt images for avoid value error
+        //设置默认图片,避免读出图片数据有误
         if let data = YHJImgCacheCenter.readImgFromCache(timeStamp: timeStamp, isThumbnail: isThumbnail) {
             self.image=UIImage(data: data)
         } else {
+            if !isThumbnail {
+                if let data = YHJImgCacheCenter.readImgFromCache(timeStamp: timeStamp, isThumbnail: true) {
+                    self.image=UIImage(data: data)
+                    return
+                }
+            }
             self.image=UIImage(named: "errorImg")
         }
     }
 }
 
 class YHJImgCacheCenter {
-    static let LoaclChache = "/Library/Cache/PhotoTool"
-    // set local path
+    static let LoaclChache = "/Documents/PhotoTool"
+    //设置本地缓存路径
     class func readImgFromCache(timeStamp: Int, isThumbnail: Bool)-> Data? {
         guard let path = YHJImgCacheCenter.getFullCachePath(timeStamp: timeStamp, isThumbnail: isThumbnail),
             FileManager.default.fileExists(atPath: path),
@@ -55,7 +61,7 @@ class YHJImgCacheCenter {
             }
         }
         
-        // format time
+        //转换为时间
         let timeInterval = TimeInterval(timeStamp)
         
         let dateformatter = DateFormatter()
@@ -68,7 +74,7 @@ class YHJImgCacheCenter {
         return chchePath + "/" + "Img_" + str + ".png"
     }
     
-    // delete cache
+    //删除缓存
     class func removeAllCache(){
         let chchePath = NSHomeDirectory() + LoaclChache
         let fileManager: FileManager = FileManager.default

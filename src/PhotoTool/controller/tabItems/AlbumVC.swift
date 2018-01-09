@@ -1,5 +1,5 @@
 //
-//  ThirdItemVC.swift
+//  AlbumVC.swift
 //  PhotoTool
 //
 //  Created by 江荧辉 on 2018/1/5.
@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class ThirdItemVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AlbumVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     fileprivate var items: [AlbumItem] = []
     fileprivate lazy var assetGridThumbnailSize: CGSize = {

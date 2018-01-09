@@ -1,5 +1,5 @@
 //
-//  MainVC.swift
+//  LoginVC.swift
 //  PhotoTool
 //
 //  Created by 江荧辉 on 2017/11/24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController, UITextFieldDelegate {
+class LoginVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -20,18 +20,10 @@ class MainVC: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.navigationBar.isHidden = true
-        
-        if SystemPhotoManager.share.isRightPhoto() {
-            SystemPhotoManager.share.synchroPhotos(block: { (_, _) in
-            })
-        } else {
-            showAlert(title: "ERROR", message: "Open the use of album permissions to settings", buttonTitle: "OK")
-        }
     }
     @IBAction func loginBtnClick(_ sender: UIButton) {
         if SystemPhotoManager.share.isRightPhoto() {
-            SystemPhotoManager.share.synchroPhotos(block: { (_, _) in
-            })
+            SystemPhotoManager.share.synchroPhotos(block: { (_, _) in })
         } else {
             showAlert(title: "ERROR", message: "Open the use of album permissions to settings", buttonTitle: "OK")
         }
@@ -42,6 +34,7 @@ class MainVC: UIViewController, UITextFieldDelegate {
 //
 //        }
     }
+    
     
     func textFieldDidBeginEditing(_ textField: UITextField){
         
