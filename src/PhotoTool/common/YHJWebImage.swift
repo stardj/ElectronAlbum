@@ -10,9 +10,11 @@ import UIKit
 import Foundation
 
 extension UIImageView {
-    /**
-     *根据时间戳，读出图片
-     */
+    /// 根据id设置图片
+    ///
+    /// - Parameters:
+    ///   - timeStamp: photoId
+    ///   - isThumbnail: 是否是缩略图
     func setImage(timeStamp: Int, isThumbnail: Bool) {
         //设置默认图片,避免读出图片数据有误
         if let data = YHJImgCacheCenter.readImgFromCache(timeStamp: timeStamp, isThumbnail: isThumbnail) {
@@ -21,17 +23,35 @@ extension UIImageView {
             if !isThumbnail {
                 if let data = YHJImgCacheCenter.readImgFromCache(timeStamp: timeStamp, isThumbnail: true) {
                     self.image=UIImage(data: data)
-                    return
                 }
+                if let photo = PhotoModel.rows(filter: "id = \(timeStamp)").first as? PhotoModel{
+                    DispatchQueue.global().async {
+                        SystemPhotoManager.share.getOriginImg(identifier: photo.identifier) {
+                            img in
+                            DispatchQueue.main.async {
+                                if let image = img {
+                                    self.image = image
+                                } else {
+                                    if let data = YHJImgCacheCenter.readImgFromCache(timeStamp: timeStamp, isThumbnail: true) {
+                                        self.image=UIImage(data: data)
+                                    } else {
+                                        self.image=UIImage(named: "errorImg")
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                self.image=UIImage(named: "errorImg")
             }
-            self.image=UIImage(named: "errorImg")
         }
     }
 }
 
 class YHJImgCacheCenter {
     static let LoaclChache = "/Documents/PhotoTool"
-    //设置本地缓存路径
+
     class func readImgFromCache(timeStamp: Int, isThumbnail: Bool)-> Data? {
         guard let path = YHJImgCacheCenter.getFullCachePath(timeStamp: timeStamp, isThumbnail: isThumbnail),
             FileManager.default.fileExists(atPath: path),
@@ -43,13 +63,18 @@ class YHJImgCacheCenter {
         guard let path: String = YHJImgCacheCenter.getFullCachePath(timeStamp: timeStap, isThumbnail: isThumbnail) else { return }
         do {
             let pathUrl = URL(fileURLWithPath: path)
-//            print("保存了：\(pathUrl)")
             try data.write(to: pathUrl, options: [])
         } catch let err as NSError {
             print(err.description)
         }
     }
     
+    /// 得到图片缓存路径
+    ///
+    /// - Parameters:
+    ///   - timeStamp: photoId
+    ///   - isThumbnail: 是否是缩略图
+    /// - Returns: 图片data
     class func getFullCachePath(timeStamp: Int, isThumbnail: Bool)-> String? {
         let chchePath = NSHomeDirectory() + LoaclChache
         let fileManager: FileManager = FileManager.default
@@ -61,7 +86,6 @@ class YHJImgCacheCenter {
             }
         }
         
-        //转换为时间
         let timeInterval = TimeInterval(timeStamp)
         
         let dateformatter = DateFormatter()
@@ -74,7 +98,13 @@ class YHJImgCacheCenter {
         return chchePath + "/" + "Img_" + str + ".png"
     }
     
-    //删除缓存
+
+    /// 删除缓存图片
+    ///
+    /// - Parameters:
+    ///   - timeStamp: photoId
+    ///   - isThumbnail: 是否是缩略图
+    /// - Returns: 图片data
     class func removeAllCache(){
         let chchePath = NSHomeDirectory() + LoaclChache
         let fileManager: FileManager = FileManager.default
@@ -84,18 +114,3 @@ class YHJImgCacheCenter {
     }
 }
 
-extension String{
-    func md5() -> String {
-        let str = self.cString(using: String.Encoding.utf8)
-        let strLen = CUnsignedInt(self.lengthOfBytes(using: String.Encoding.utf8))
-        let digestLen = Int(CC_MD5_DIGEST_LENGTH)
-        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: digestLen)
-        CC_MD5(str!, strLen, result)
-        let hash = NSMutableString()
-        for i in 0 ..< digestLen {
-            hash.appendFormat("%02x", result[i])
-        }
-        result.deinitialize()
-        return String(format: hash as String)
-    }
-}

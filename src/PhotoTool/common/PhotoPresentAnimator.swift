@@ -14,6 +14,11 @@ class YHJPresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         return 0.5
     }
     
+    /// 自定义弹出动画
+    ///
+    /// - Parameters:
+    ///   - timeStamp: photoId
+    ///   - isThumbnail: 是否是缩略图
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let presentView = transitionContext.view(forKey: .to)
         transitionContext.containerView.addSubview(presentView!)
@@ -33,6 +38,11 @@ class YHJDismissAnimator: NSObject,  UIViewControllerAnimatedTransitioning{
         return 0.5
     }
     
+    /// 自定义dismiss动画
+    ///
+    /// - Parameters:
+    ///   - timeStamp: photoId
+    ///   - isThumbnail: 是否是缩略图
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let fromView = transitionContext.view(forKey: .from)
         

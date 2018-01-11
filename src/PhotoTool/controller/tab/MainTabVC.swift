@@ -10,6 +10,7 @@ import UIKit
 
 struct PhotoNotiFicationName {
     static let HidiBottomBar = "HidiBottomBar"
+    static let BecomeActive = "BecomeActive"
 }
 
 class MainTabVC: CustomTabBarController, UITabBarControllerDelegate {
@@ -48,7 +49,6 @@ class MainTabVC: CustomTabBarController, UITabBarControllerDelegate {
         }
         let nvc1 = UINavigationController()
         nvc1.pushViewController(vc1, animated: true)
-        vc1.setInfo(showType: .normal, sortType: .time)
         vc1.setTabBarItem(tag: 0, titleStr: "首页", titleSelecteColor: "1bcd99", defaultImageStr: getImgStr(name: "icon_index_h"), selectImageStr: getImgStr(name:"icon_index"))
         
         guard let vc2 = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapVC") as? MapVC else {
@@ -70,17 +70,6 @@ class MainTabVC: CustomTabBarController, UITabBarControllerDelegate {
 
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         return true
-//        if viewController.tabBarItem.tag > 1 && !isLogin {
-//            let nextStoryboard = UIStoryboard(name: "Login", bundle:nil)
-//            let nextVC = nextStoryboard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
-//            self.navigationController?.navigationBar.isHidden = false
-//            let nvc = UINavigationController.init(rootViewController: nextVC)
-//            present(nvc, animated: false, completion: nil)
-//            return false
-//        } else {
-//            self.navigationController?.navigationBar.isHidden = true
-//            return true
-//        }
     }
 }
 

@@ -7,6 +7,7 @@
 //
 import Foundation
 import CoreLocation
+import Photos
 
 class PhotoModel: SQLTable {
     var id = 0
@@ -16,9 +17,9 @@ class PhotoModel: SQLTable {
     var addr = ""
     var position = ""
     var desc = ""
-
+    var identifier = ""
     required init() { super.init() }
-    convenience init(id: Int, name: String, dateTime: String, addr: String, position: String, desc: String="") {
+    convenience init(id: Int, name: String, dateTime: String, addr: String, position: String, desc: String="", identifier: String="") {
         self.init()
         self.id = id
         self.name = name
@@ -27,6 +28,7 @@ class PhotoModel: SQLTable {
         self.addr = addr
         self.position = position
         self.desc = desc
+        self.identifier = identifier
     }
     
     func getPosition() -> CLLocationCoordinate2D? {
@@ -42,43 +44,30 @@ class PhotoModel: SQLTable {
     }
 }
 
-
-enum CollectionViewShowType: UInt {
-    case normal
-    case waterfall
+//相簿列表项
+class AlbumItem {
+    //相簿名称
+    var title = ""
+    var count = 0
+    
+    //相簿内的资源
+    var fetchResult: PHFetchResult<PHAsset>
+    
+    init(title:String, fetchResult: PHFetchResult<PHAsset>, count: Int){
+        self.title = title
+        self.fetchResult = fetchResult
+        self.count = count
+    }
 }
 
-enum SortType: UInt {
-    case time
-    case local
-}
-
-enum CellType: Int {
-    case group
-    case photo
-}
 class BaseGroup: NSObject {
-    var sortType: SortType = .time
     var groupTitle = ""
     var photos: [PhotoModel?] = []
     override init() { super.init() }
-    convenience init(sortType: SortType, groupTitle: String, photos: [PhotoModel?]) {
+    convenience init(groupTitle: String, photos: [PhotoModel?]) {
         self.init()
-        self.sortType = sortType
         self.groupTitle = groupTitle
         self.photos = photos
     }
 }
 
-class FirstVCGroup: BaseGroup {
-    var color: String = ""
-    
-    //    override init(sortType: SortType, groupTitle: String, photos: [PhotoModel?]) {
-    //        super.init(sortType: sortType, groupTitle: groupTitle, photos: photos)
-    //    }
-    
-    convenience init(sortType: SortType, groupTitle: String, photos: [PhotoModel?], color: String) {
-        self.init(sortType: sortType, groupTitle: groupTitle, photos: photos)
-        self.color = color
-    }
-}

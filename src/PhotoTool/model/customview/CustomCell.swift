@@ -39,8 +39,11 @@ class SearchCell: UITableViewCell {
 class ImageBaseCell: UICollectionViewCell {
     @IBOutlet weak var imgView: UIImageView!
     
-    func setImg(timeStamp: Int, isThumbnail: Bool) {
+    func setImg(timeStamp: Int, isThumbnail: Bool, isFit:Bool=false) {
         imgView.setImage(timeStamp: timeStamp, isThumbnail: isThumbnail)
+        if isFit {
+            imgView.contentMode = .scaleAspectFit
+        }
     }
 }
 
@@ -62,73 +65,6 @@ class CollectionHeaderCell: UICollectionReusableView {
     
     func setInfo(titleStr: String) {
         titleLabel.text = titleStr
-    }
-}
-
-class BookCollectionCell: UICollectionViewCell {
-    private var _imgId = 0
-    private var _musicImage = ""
-    private var _type = CellType.group
-    @IBOutlet weak var bookImage: UIImageView!
-    @IBOutlet weak var textLabel: UILabel!
-    
-    func initCellWithInfo(cellType: CellType, imgId: Int, musicImg: String, detailStr: String?=nil) {
-        _type = cellType
-        _imgId = imgId
-        _musicImage = musicImg
-        bookImage.setImageViewShadow()
-        bookImage.image = UIImage(named: "errorImg")
-        guard let detailStr = detailStr else {
-            textLabel.isHidden = true
-            return
-        }
-        textLabel.text = detailStr
-        textLabel.isHidden = false
-    }
-}
-
-class TableCollectionViewCell: UICollectionView {
-    var indexPath : IndexPath!
-}
-
-class HomeCollectionTableViewCell: UITableViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var collectionView: TableCollectionViewCell!
-    @IBOutlet weak var showMoreBtn: UIButton!
-    
-    func setCollectionViewDataSourceDelegate(dataSourceDelegate delegate: UICollectionViewDelegate & UICollectionViewDataSource, index: NSInteger) {
-        collectionView.dataSource = delegate
-        collectionView.delegate = delegate
-        collectionView.tag = index
-        collectionView.reloadData()
-    }
-    
-    func setTitleLabel(isShowMoreBtn: Bool, typeId: SortType, title: String, color: UIColor) {
-        if let layers = titleLabel.layer.sublayers {
-            for i in layers {
-                if i.classForCoder == CAGradientLayer().classForCoder {
-                    i.removeFromSuperlayer()
-                }
-            }
-        }
-        showMoreBtn.tag = Int(typeId.rawValue)
-        titleLabel.font = Tools.getNewFont(size: 16)
-        showMoreBtn.isHidden = !isShowMoreBtn
-        showMoreBtn.titleLabel?.font = Tools.getNewFont(size: 16)
-        titleLabel.text = "     " + title
-        let gradientLayer = setLabelBgColor(frame: titleLabel.frame, color: color)
-        titleLabel.layer.insertSublayer(gradientLayer, at: 0)
-        titleLabel.isHidden = false
-    }
-    
-    private func setLabelBgColor(frame: CGRect, color: UIColor) -> CAGradientLayer {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = frame
-        let endColor = color.withAlphaComponent(0)
-        gradientLayer.colors = [color.cgColor, endColor.cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0, y:0.5)
-        gradientLayer.endPoint = CGPoint(x:1, y:0.5)
-        return gradientLayer
     }
 }
 

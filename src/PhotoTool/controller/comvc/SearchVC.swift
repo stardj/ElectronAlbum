@@ -34,7 +34,6 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setStatusBarStyle(isDefault: false)
-        
         setNavigationBar(isBackShow: true, bgImgName: "top_bg_gray", titleName: "", titleColor: UIColor.white)
         navigationItem.titleView = searchBar
     }
@@ -79,9 +78,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         return true
     }
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        print(searchBar.text)
-    }
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return }
         photoAry.removeAll()

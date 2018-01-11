@@ -8,6 +8,8 @@
 import UIKit
 import Photos
 
+
+// 时间相关的处理
 class DateTools {
     class func getNameByDate(timeStap: Int) -> String {
         let dateformatter = DateFormatter()
@@ -43,86 +45,35 @@ class DateTools {
 }
 
 class Tools {
-    class func getImage(timeStamp: Int, isThumbnail: Bool) -> UIImage {
-        //设置默认图片,避免读出图片数据有误
-        //        self.image=UIImage(named: "2")
-        if let data = YHJImgCacheCenter.readImgFromCache(timeStamp: timeStamp, isThumbnail: isThumbnail) {
-            return UIImage(data: data) ?? UIImage(named: "errorImg")!
-        }
-        return UIImage(named: "errorImg")!
-    }
-    
     class func getNewFont(size: CGFloat) -> UIFont {
         let font = UIFont.systemFont(ofSize: size * DeviceInfo.ScaleSizeW)
         return font
     }
     
-    class func toJSONString(ary: Any) -> String? {
-        let data = try? JSONSerialization.data(withJSONObject: ary, options: .prettyPrinted)
-        let str = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        return str as String?
-    }
-    
-    class func toJSONString(dict: Dictionary<String, Any>!) -> String? {
-        let data = try? JSONSerialization.data(withJSONObject: dict, options: [])
-        let str = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        return str as String?
-    }
-    
-//    class func propertyList(model: NSObject) -> [String: Any?] {
-//        var props: [String: Any?] = [:]
-//        var outCount:UInt32 = 0
-//
-//        let properties: UnsafeMutablePointer<objc_property_t>! = class_copyPropertyList(type(of: model), &outCount)
-//        for i in 0..<Int(outCount) {
-//            guard let pty = properties?[i] else { continue}
-//            let cName = property_getName(pty)
-//            guard let name = String(utf8String: cName) else {continue}
-//            let value = model.value(forKey: name)
-//            props = [name: value]
-//        }
-//
-//        return props
-//    }
-    
-    class func getPropertyList(model: NSObject) -> [String] {
-        var pros: [String] = []
-        let morror = Mirror(reflecting: model)
-        
-        for (name, _) in (morror.children) {
-            //            print("子类属性名:\(name) 值: \(value)")
-            guard let name = name else { continue }
-            pros.append(name)
+    /// 根据id得到图片data
+    ///
+    /// - Parameters:
+    ///   - timeStamp: photoId
+    ///   - isThumbnail: 是否是缩略图
+    /// - Returns: 图片data
+    class func getImage(timeStamp: Int, isThumbnail: Bool) -> UIImage? {
+        if let data = YHJImgCacheCenter.readImgFromCache(timeStamp: timeStamp, isThumbnail: isThumbnail) {
+            return UIImage(data: data)
+        } else {
+            if !isThumbnail {
+                if let data = YHJImgCacheCenter.readImgFromCache(timeStamp: timeStamp, isThumbnail: true) {
+                    return UIImage(data: data)
+                }
+            }
         }
-        
-        return pros
+        return UIImage(named: "errorImg")
     }
     
-    class func getValueList(model: NSObject) -> [Any?] {
-        var values: [Any?] = []
-        let morror = Mirror(reflecting: model)
-        
-        for (_, value) in (morror.children) {
-            //            print("子类属性名:\(name) 值: \(value)")
-//            guard let value = value else { continue }
-            values.append(value)
+    class func minOne<T:Comparable>( _ seq:[T]) -> T{
+        assert(seq.count>0)
+        return seq.reduce(seq[0]){
+            min($0, $1)
         }
-        
-        return values
-    }
-    
-    class func propertyDic(model: NSObject) -> [String: Any?] {
-        var dic: [String: Any] = [:]
-        
-        let morror = Mirror(reflecting: model)
-
-        for (name, value) in (morror.children) {
-//            print("子类属性名:\(name) 值: \(value)")
-            guard let name = name else { continue }
-            dic = [name : value]
-        }
-        
-        return dic
     }
 }
 

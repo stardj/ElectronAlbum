@@ -23,11 +23,6 @@ class MapVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
         return CGSize(width: 85, height: 90)
     }()
     
-    fileprivate lazy var leftBtn: UIBarButtonItem = {
-        let item = UIBarButtonItem.init(title: "Exit", style: .plain, target: self, action: #selector(returnBtnDismiss))
-        return item
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -36,7 +31,6 @@ class MapVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
         super.viewWillAppear(true)
         setStatusBarStyle(isDefault: false)
         setNavigationBar(isBackShow: false, bgImgName: "", titleName: PageTitle.Map, titleColor: UIColor.black)
-        navigationItem.leftBarButtonItems = [leftBtn]
         
         loadData()
     }
@@ -64,13 +58,14 @@ class MapVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
             }
             if let ary = PhotoModel.rows(filter: "addr = '\(item)'") as? [PhotoModel] {
                 photoAry += ary
-                let group = BaseGroup(sortType: .local, groupTitle: item, photos: ary)
+                let group = BaseGroup(groupTitle: item, photos: ary)
                 groups.append(group)
                 addAnnotation(group: group)
             }
         }
         
-        if photoAry.count == 0 {
+        let positonAry = PhotoModel.getDifferValues(columnName: "position", filter: "addr = ''", order: "id DESC")
+        if positonAry.count > 0 {
             let addrs = PhotoModel.getDifferValues(columnName: "position", order: "id DESC")
             for item in addrs {
                 if item == "" {
@@ -78,7 +73,7 @@ class MapVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
                 }
                 if let ary = PhotoModel.rows(filter: "position = '\(item)'") as? [PhotoModel] {
                     photoAry += ary
-                    let group = BaseGroup(sortType: .local, groupTitle: item, photos: ary)
+                    let group = BaseGroup(groupTitle: item, photos: ary)
                     groups.append(group)
                     addAnnotation(group: group)
                 }
@@ -87,15 +82,14 @@ class MapVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
         
         collectionView.reloadData()
         if photoAry.count > curIndex, let pose = photoAry[curIndex].getPosition() {
-            mapView.region = MKCoordinateRegion(center: pose, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+            mapView.region = MKCoordinateRegion(center: pose, span: MKCoordinateSpan(latitudeDelta: 20, longitudeDelta: 20))
         }
     }
     
     fileprivate func addAnnotation(group: BaseGroup) {
-        guard let fPhoto = group.photos.first as? PhotoModel , fPhoto.id > 0, let pose = fPhoto.getPosition() else {
+        guard let fPhoto = group.photos.first as? PhotoModel , fPhoto.id > 0 else {
             return
         }
-        print(pose)
         var isSelect = false
         if photoAry.count > curIndex, photoAry[curIndex].position == fPhoto.position {
             isSelect = true
@@ -136,7 +130,7 @@ class MapVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
             }
         }
         if let pose = photo.getPosition() {
-            mapView.setRegion(MKCoordinateRegion.init(center: pose, span: MKCoordinateSpanMake(0.5, 0.5)), animated: true)
+            mapView.setRegion(MKCoordinateRegion.init(center: pose, span: MKCoordinateSpanMake(10, 10)), animated: true)
         }
         if  curIndex != indexPath.row {
             curIndex = indexPath.row
@@ -144,22 +138,7 @@ class MapVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
         }
     }
     
-//    fileprivate func changeSelectCell(newIndex: IndexPath) {
-//        guard let index = curIndexPath else {
-//            return
-//        }
-//        if newIndex != index {
-//            if let oldCell = collectionView.cellForItem(at: index) {
-//                oldCell.backgroundColor = UIColor.white
-//            }
-//            if let newCell = collectionView.cellForItem(at: newIndex) {
-//                newCell.backgroundColor = UIColor.blue
-//            }
-//        }
-//    }
-    
     // MKMapViewDelegate
-    //显示大头针时调用，注意方法中的annotation参数是即将显示的大头针对象.1)该方法首先显示大头针的时候会调用2)向地图上添加大头针的时候也会调用
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var annotaionView: MKAnnotationView?
         if let annotationT = annotation as? PhotoGroupAnnoation {
@@ -194,7 +173,6 @@ class MapVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
 class PhotoAnnoation: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var photoId: Int?
-    //主标题
     var title: String?
     init(coordinate: CLLocationCoordinate2D, photoId: Int, title: String) {
         self.coordinate = coordinate
@@ -208,7 +186,6 @@ class PhotoGroupAnnoation: NSObject, MKAnnotation {
     fileprivate var group: BaseGroup
     var coordinate: CLLocationCoordinate2D
     fileprivate var photoId: Int?
-    //主标题
     var title: String?
     fileprivate var isSelect: Bool
     init(group: BaseGroup, isSelect: Bool) {
@@ -278,7 +255,6 @@ class PhotoAnnotationView: MKPinAnnotationView {
         backView.backgroundColor = isSelected ? UIColor.blue : UIColor.clear
     }
     
-    //#MARK: 创建弹出视图
     class func create(mapView: MKMapView)-> PhotoAnnotationView? {
         let indentifier = "PhotoAnnotationView"
         var calloutView = mapView.dequeueReusableAnnotationView(withIdentifier: indentifier) as? PhotoAnnotationView

@@ -17,13 +17,20 @@ struct PageTitle {
 
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, WaterFallLayoutDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     fileprivate lazy var cellSize:CGSize = {
-        let picWidth: CGFloat = DeviceInfo.isPad ? DeviceInfo.ScreenWidth*0.16 : DeviceInfo.ScreenWidth*0.25
-        return CGSize(width: picWidth, height: picWidth*1.25)
+        let wid = Tools.minOne([DeviceInfo.ScreenWidth, DeviceInfo.ScreenHeight])
+        let picWidth: CGFloat = DeviceInfo.isPad ? wid*0.16 : wid*0.25
+        return CGSize(width: picWidth, height: picWidth*1.1)
+    }()
+
+    fileprivate lazy var uploadingView: UIActivityIndicatorView = {
+        let loading = UIActivityIndicatorView(frame: CGRect(x: 0, y: -60, width: DeviceInfo.getScreenWidth(), height: DeviceInfo.getScreenHeight()+100))
+        loading.isHidden = false
+        loading.color = UIColor.gray
+        loading.backgroundColor = UIColor(white: 0.5, alpha: 0.3)
+        self.view.addSubview(loading)
+       return loading
     }()
     
-    fileprivate var sortType: SortType? = nil
-    fileprivate var showType: CollectionViewShowType = .normal
-
     fileprivate var photoGroupAry: [BaseGroup?] = []
     fileprivate var photoAry: [PhotoModel] = []
     fileprivate var chooseAry: [Int] = []
@@ -31,11 +38,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     fileprivate lazy var searchBtn: UIBarButtonItem = {
         let btn = UIBarButtonItem.init(image: UIImage(named: "search"), style: .plain, target: self, action: #selector(searchBtnClick))
         return btn
-    }()
-    
-    fileprivate lazy var leftBtn: UIBarButtonItem = {
-        let item = UIBarButtonItem.init(title: "Exit", style: .plain, target: self, action: #selector(returnBtnDismiss))
-        return item
     }()
 
     fileprivate lazy var photoBtn: UIBarButtonItem = {
@@ -56,10 +58,11 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         SystemPhotoManager.share.deletePhotos(deleteId: chooseAry) {[weak self] (status) in
             guard let weakself = self else { return }
             DispatchQueue.main.async {
+                weakself.chooseBtnClick()
                 if status {
-                    weakself.initData()
-                    weakself.chooseBtnClick()
+                    weakself.reFreshData()
                 } else {
+                    weakself.collectionView.reloadData()
                     weakself.showAlert(title: "ERROR", message: "Delete failure", buttonTitle: "I Know")
                 }
             }
@@ -67,27 +70,69 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     @IBAction func uploadBtnClick(_ sender: UIButton) {
-        
+        if chooseAry.count == 0 {
+            reFreshData()
+            return
+        } else if chooseAry.count > 5 {
+            showAlert(title: "Warning", message: "Select up to five photos uploaded", buttonTitle: "OK")
+            return
+        }
+        uploadingView.startAnimating()
+        chooseBtn.isEnabled = false
+        PhotoHttpManager.share.uploadPicture(chooseAry: chooseAry) {[weak self] (error, name) in
+            if let weakself = self , error == nil {
+                weakself.showAlert(title: "Success", message: "Upload succeeded", buttonTitle: "OK")
+            } else {
+                self?.showAlert(title: "Warning", message: "Upload failure", buttonTitle: "OK")
+            }
+            
+            DispatchQueue.main.async {
+                self?.chooseBtn.isEnabled = true
+                self?.uploadingView.stopAnimating()
+                self?.reFreshData()
+                self?.chooseBtnClick()
+            }
+        }
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initData()
         let layout = StickyHeadersFlowLayout()
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.reloadData()
+        reFreshData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         chooseAry = []
         setNavigationBar(isBackShow: false, bgImgName: "", titleName: PageTitle.Home, titleColor: UIColor.black)
-        navigationItem.leftBarButtonItems = [leftBtn]
         chooseBtn.title = "choose"
         navigationItem.rightBarButtonItems = [photoBtn, chooseBtn, searchBtn]
-
+        if isUpdate() {
+            reFreshData()
+        }
+        
+        if photoAry.count == 0 {
+            SystemPhotoManager.share.synchroPhotos {[weak self] (status, update) in
+                guard let weakself = self else { return }
+                if update {
+                    weakself.reFreshData()
+                }
+            }
+        }
+    }
+    
+    fileprivate func isUpdate() -> Bool {
+        if let firstId = (PhotoModel.rows(order: "id DESC").first as? PhotoModel)?.id,
+            let curFirstId = photoAry.first?.id {
+            let countSql = PhotoModel.count()
+            let count = photoAry.count
+            return !((firstId == curFirstId) && (countSql == count))
+        }
+        return true
     }
     
     @objc fileprivate func searchBtnClick() {
@@ -98,7 +143,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     @objc fileprivate func chooseBtnClick() {
         chooseAry = []
-        collectionView.reloadData()
 
         if getIsChooseMode() {
             chooseBtn.title = "choose"
@@ -118,34 +162,19 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         return title != "choose"
     }
     
-    func setInfo(showType: CollectionViewShowType, sortType: SortType?) {
-        self.showType = showType
-        self.sortType = sortType
-    }
-    
-    func initData() {
+    fileprivate func reFreshData() {
         photoGroupAry = []
         photoAry = []
-        guard let sortType = sortType else { return }
-        switch sortType {
-        case .time:
-            let timeAry = PhotoModel.getDifferValues(columnName: "dateTime", order: "dateTime DESC")
-            for str in timeAry {
-                if let ary = PhotoModel.rows(filter: "dateTime = '\(str)'", order: "id DESC") as? [PhotoModel]{
-                    let g = BaseGroup(sortType: .time, groupTitle: str, photos: ary)
-                    photoGroupAry.append(g)
-                    photoAry += ary
-                }
+        let timeAry = PhotoModel.getDifferValues(columnName: "dateTime", order: "dateTime DESC")
+        for str in timeAry {
+            if let ary = PhotoModel.rows(filter: "dateTime = '\(str)'", order: "id DESC") as? [PhotoModel]{
+                let g = BaseGroup(groupTitle: str, photos: ary)
+                photoGroupAry.append(g)
+                photoAry += ary
             }
-        case .local:
-            let addrAry = PhotoModel.getDifferValues(columnName: "addr", order: "addr ASC")
-            for str in addrAry {
-                if let ary = PhotoModel.rows(filter: "addr = '\(str)'", order: "id DESC") as? [PhotoModel]{
-                    let g = BaseGroup(sortType: .time, groupTitle: str, photos: ary)
-                    photoGroupAry.append(g)
-                    photoAry += ary
-                }
-            }
+        }
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
         }
     }
     
@@ -186,15 +215,14 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         SystemPhotoManager.share.synchroPhotos {[weak self] (status, _) in
             guard let weakself = self else { return }
             if status {
-                if let newPhoto = PhotoModel.rows(order: "id DESC", limit: 1).first as? PhotoModel {
-                    let group1Name = weakself.photoGroupAry.first??.groupTitle ?? ""
-                    if group1Name == newPhoto.dateTime {
-                        weakself.photoGroupAry.first??.photos.insert(newPhoto, at: 0)
-                    weakself.collectionView.reloadSections(IndexSet(integer: 0))
-                    } else {
-                        DispatchQueue.main.async {
-                            weakself.initData()
-                            weakself.collectionView.reloadData()
+                DispatchQueue.main.async {
+                    if let newPhoto = PhotoModel.rows(order: "id DESC", limit: 1).first as? PhotoModel {
+                        let group1Name = weakself.photoGroupAry.first??.groupTitle ?? ""
+                        if group1Name == newPhoto.dateTime {
+                            weakself.photoGroupAry.first??.photos.insert(newPhoto, at: 0)
+                            weakself.collectionView.reloadSections(IndexSet(integer: 0))
+                        } else {
+                            weakself.reFreshData()
                         }
                     }
                 }
@@ -203,15 +231,11 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     // MARK: UICollectionViewDelegate Delegate
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if sortType == nil {
-            return 1
-        } else {
-            return photoGroupAry.count
-        }
+        return photoGroupAry.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let photos = photoGroupAry[section]?.photos, sortType != nil else { return photoAry.count }
+        guard let photos = photoGroupAry[section]?.photos else { return photoAry.count }
         return photos.count
     }
     
@@ -231,25 +255,17 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     //header高度
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        guard sortType != nil else {
-            return CGSize.zero
-        }
         return CGSize(width: UIScreen.main.bounds.size.width, height: DeviceInfo.isPad ? 50 : 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if sortType == nil {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCellWithSelectedID", for: indexPath) as? ImageCellWithSelected  else { return UICollectionViewCell() }
-            let photo = photoAry[indexPath.row]
-            cell.setImg(timeStamp: photo.id, isSelected: chooseAry.contains(photo.id), isThumbnail: true)
-            return cell
-        } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCellWithSelectedID", for: indexPath) as? ImageCellWithSelected,
-                let photo = photoGroupAry[indexPath.section]?.photos[indexPath.row]  else { return UICollectionViewCell() }
-            
-            cell.setImg(timeStamp: photo.id, isSelected: chooseAry.contains(photo.id), isThumbnail: true)
-            return cell
-        }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCellWithSelectedID", for: indexPath) as? ImageCellWithSelected,
+            photoGroupAry.count > indexPath.section,
+            (photoGroupAry[indexPath.section]?.photos.count)! > indexPath.row,
+            let photo = photoGroupAry[indexPath.section]?.photos[indexPath.row]  else { return UICollectionViewCell() }
+        
+        cell.setImg(timeStamp: photo.id, isSelected: chooseAry.contains(photo.id), isThumbnail: true)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

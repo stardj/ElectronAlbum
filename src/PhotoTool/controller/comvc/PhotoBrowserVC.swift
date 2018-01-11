@@ -61,7 +61,7 @@ class PhotoBrowserVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        super.didRotate(from: fromInterfaceOrientation)
+//        super.didRotate(from: fromInterfaceOrientation)
         collectionView.reloadData()
     }
     
@@ -77,7 +77,7 @@ class PhotoBrowserVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageBaseCellID", for: indexPath) as? ImageBaseCell else { return UICollectionViewCell() }
         let photoId = photoAry[indexPath.row].id
-        cell.setImg(timeStamp: photoId, isThumbnail: false)
+        cell.setImg(timeStamp: photoId, isThumbnail: false, isFit: true)
         if isAppeared {
             curIndex = indexPath.row
         }

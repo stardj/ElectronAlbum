@@ -16,11 +16,6 @@ class AlbumVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return CGSize(width: 72*0.85, height: 72)
     }()
     
-    fileprivate lazy var leftBtn: UIBarButtonItem = {
-        let item = UIBarButtonItem.init(title: "Exit", style: .plain, target: self, action: #selector(returnBtnDismiss))
-        return item
-    }()
-    
     fileprivate let tableHeight: CGFloat = 130
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +26,8 @@ class AlbumVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewWillAppear(true)
         setNavigationBar(isBackShow: false, bgImgName: "", titleName: PageTitle.Album, titleColor: UIColor.black)
         navigationController?.navigationBar.tintColor = UIColor.black
-        navigationItem.leftBarButtonItems = [leftBtn]
         
         loadData()
-    }
-    
-    @objc fileprivate func exitBtnClick() {
-        navigationController?.dismiss(animated: true, completion: nil)
     }
     
     fileprivate func loadData() {

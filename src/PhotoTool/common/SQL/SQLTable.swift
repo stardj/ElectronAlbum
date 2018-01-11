@@ -242,6 +242,12 @@ class SQLTable:NSObject {
     }
     
     // 得到该列中，不同值的数量
+    /// Run an SQL query with (parameters) parameters and returns an array of dictionaries where the keys are the column names
+    ///
+    /// - Parameters:
+    ///   - sql: The SQL query to be executed
+    ///   - parameters: An array of optional parameters in case the SQL statement includes bound parameters - indicated by `?`
+    /// - Returns: An empty array if the query resulted in no rows. Otherwise, an array of dictionaries where each dictioanry key is a column name and the value is the column value.
     class func countInDiffer(columeName:String) -> Int {
         return self.getDifferValues(columnName: columeName).count
     }
