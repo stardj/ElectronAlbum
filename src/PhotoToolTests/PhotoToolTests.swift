@@ -2,8 +2,8 @@
 //  PhotoToolTests.swift
 //  PhotoToolTests
 //
-//  Created by yinghui jiang on 2017/11/24.
-//  Copyright © 2017 year YingHui Jiang. All rights reserved.
+//  Created by  YH_Jiang L_Zhang ZMX_Wang on 2017/11/24.
+//  Copyright © 2017 year  YH_Jiang L_Zhang ZMX_Wang. All rights reserved.
 //
 
 import XCTest

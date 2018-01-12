@@ -2,8 +2,8 @@
 //  SQLiteDB.swift
 //  PhotoTool
 //
-//  Created by yinghui jiang on 2018/1/3.
-//  Copyright © 2018 year YingHui Jiang. All rights reserved.
+//  Created by  YH_Jiang L_Zhang ZMX_Wang on 2018/1/3.
+//  Copyright © 2018 year  YH_Jiang L_Zhang ZMX_Wang. All rights reserved.
 //
 
 import Foundation
