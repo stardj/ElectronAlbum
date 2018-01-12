@@ -2,8 +2,8 @@
 //  AlbumVC.swift
 //  PhotoTool
 //
-//  Created by 江荧辉 on 2018/1/5.
-//  Copyright © 2018年 YingHui Jiang. All rights reserved.
+//  Created by yinghui jiang on 2018/1/5.
+//  Copyright © 2018 year YingHui Jiang. All rights reserved.
 //
 
 import UIKit
@@ -20,14 +20,19 @@ class AlbumVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        loadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setNavigationBar(isBackShow: false, bgImgName: "", titleName: PageTitle.Album, titleColor: UIColor.black)
         navigationController?.navigationBar.tintColor = UIColor.black
-        
-        loadData()
+        SystemPhotoManager.share.synchroPhotos { [weak self]  (_, isUpdate) in
+            guard let weakself = self else { return }
+            if isUpdate {
+                weakself.loadData()
+            }
+        }
     }
     
     fileprivate func loadData() {

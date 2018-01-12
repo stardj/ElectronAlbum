@@ -2,8 +2,8 @@
 //  PhotoBrowserVC.swift
 //  PhotoTool
 //
-//  Created by 江荧辉 on 2017/12/16.
-//  Copyright © 2017年 YingHui Jiang. All rights reserved.
+//  Created by yinghui jiang on 2017/12/16.
+//  Copyright © 2017 year YingHui Jiang. All rights reserved.
 //
 
 import UIKit

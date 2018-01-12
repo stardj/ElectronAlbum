@@ -2,8 +2,8 @@
 //  DetailView.swift
 //  PhotoTool
 //
-//  Created by 江荧辉 on 2017/12/23.
-//  Copyright © 2017年 YingHui Jiang. All rights reserved.
+//  Created by yinghui jiang on 2017/12/23.
+//  Copyright © 2017 year YingHui Jiang. All rights reserved.
 //
 
 import UIKit
@@ -21,7 +21,7 @@ class DetailView: UIView, UIScrollViewDelegate, UITextFieldDelegate, MKMapViewDe
     fileprivate var newPhoto: PhotoModel!
     func setInfo(photo: PhotoModel) {
         newPhoto = photo
-        backView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cancleBtnClick(_:))))
+        backView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cancelBtnClick(_:))))
 
         titleTextField.text = photo.name != "" ? photo.name : DateTools.getNameByDate(timeStap: photo.id)
         descTextField.text = photo.desc
@@ -31,14 +31,14 @@ class DetailView: UIView, UIScrollViewDelegate, UITextFieldDelegate, MKMapViewDe
             let p = PhotoAnnoation.init(coordinate: pose, photoId: photo.id, title: photo.addr)
             p.photoId = photo.id
             mapView.addAnnotation(p)
-            addrLabel.text = "(\(photo.addr))"
+            addrLabel.text = photo.addr != "" ? "(\(photo.addr)" : ""
             mapView.region = MKCoordinateRegionMake(pose, MKCoordinateSpanMake(0.5, 0.5))
         } else {
             addrLabel.text = "(This picture has no address information)"
         }
     }
     
-    @IBAction func cancleBtnClick(_ sender: UIButton) {
+    @IBAction func cancelBtnClick(_ sender: UIButton) {
         removeFromSuperview()
     }
     

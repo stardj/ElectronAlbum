@@ -2,8 +2,8 @@
 //  PhotoEx.swift
 //  PhotoTool
 //
-//  Created by 江荧辉 on 2018/1/1.
-//  Copyright © 2018年 YingHui Jiang. All rights reserved.
+//  Created by yinghui jiang on 2018/1/1.
+//  Copyright © 2018 year YingHui Jiang. All rights reserved.
 //
 
 import UIKit
@@ -34,12 +34,13 @@ extension UIViewController {
     
     
     func setTabBarItem(tag: Int, titleStr: String, titleSelecteColor: String, defaultImageStr: String, selectImageStr: String) {
+        let font = UIFont.systemFont(ofSize: DeviceInfo.isPad ? 17 : 14)
         tabBarItem.tag = tag
         tabBarItem.title = titleStr
-        tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font : Tools.getNewFont(size: 14), NSAttributedStringKey.foregroundColor : ColorsAry.colorBlack6], for: .normal)
+        tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font : font, NSAttributedStringKey.foregroundColor : ColorsAry.colorBlack6], for: .normal)
         tabBarItem.image = UIImage(named: defaultImageStr)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         tabBarItem.selectedImage = UIImage(named: selectImageStr)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-        tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : ColorsAry.colorTabbar, NSAttributedStringKey.font : Tools.getNewFont(size: 14) ], for: .selected)
+        tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : ColorsAry.colorTabbar, NSAttributedStringKey.font : font], for: .selected)
 //        if DeviceInfo.isPad && UIDevice.current.systemVersion>="11" {
 //            let imgSize = (tabBarItem.image?.size)!
 //            let padding: CGFloat = (imgSize.height)/2

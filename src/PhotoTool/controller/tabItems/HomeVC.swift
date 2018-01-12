@@ -2,8 +2,8 @@
 //  HomeVC.swift
 //  PhotoTool
 //
-//  Created by 江荧辉 on 2017/12/16.
-//  Copyright © 2017年 YingHui Jiang. All rights reserved.
+//  Created by yinghui jiang on 2017/12/16.
+//  Copyright © 2017 year YingHui Jiang. All rights reserved.
 //
 
 import UIKit
@@ -71,7 +71,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     @IBAction func uploadBtnClick(_ sender: UIButton) {
         if chooseAry.count == 0 {
-            reFreshData()
+            showAlert(title: "Warning", message: "Uploading pictures can not be empty", buttonTitle: "OK")
             return
         } else if chooseAry.count > 5 {
             showAlert(title: "Warning", message: "Select up to five photos uploaded", buttonTitle: "OK")
@@ -150,7 +150,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             navigationItem.rightBarButtonItems = [photoBtn, chooseBtn, searchBtn]
             NotificationCenter.default.post(name: NSNotification.Name.init(PhotoNotiFicationName.HidiBottomBar), object: nil, userInfo: ["isHide": false])
         } else {
-            chooseBtn.title = "Cancle"
+            chooseBtn.title = "Cancel"
             bottomView.isHidden = false
             navigationItem.rightBarButtonItems = [chooseBtn]
             NotificationCenter.default.post(name: NSNotification.Name.init(PhotoNotiFicationName.HidiBottomBar), object: nil, userInfo: ["isHide": true])

@@ -2,8 +2,8 @@
 //  MapVC.swift
 //  PhotoTool
 //
-//  Created by 江荧辉 on 2018/1/2.
-//  Copyright © 2018年 YingHui Jiang. All rights reserved.
+//  Created by yinghui jiang on 2018/1/2.
+//  Copyright © 2018 year YingHui Jiang. All rights reserved.
 //
 
 import UIKit
@@ -25,14 +25,19 @@ class MapVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setStatusBarStyle(isDefault: false)
         setNavigationBar(isBackShow: false, bgImgName: "", titleName: PageTitle.Map, titleColor: UIColor.black)
-        
-        loadData()
+        SystemPhotoManager.share.synchroPhotos {[weak self] (_, isUpdate) in
+            guard let weakself = self else { return }
+            if isUpdate {
+                weakself.loadData()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -208,7 +213,7 @@ class PhotoAnnotationView: MKPinAnnotationView {
 
     fileprivate var group: BaseGroup?
     fileprivate lazy var btnView: UIImageView = {
-        let img = UIImageView(frame: CGRect(x: -imgW/2, y: -imgW+10, width: imgW, height: imgW))
+        let img = UIImageView(frame: CGRect(x: -imgW/2, y: -imgW, width: imgW, height: imgW))
         if let count = group?.photos.count {
             let label = UILabel(frame: CGRect(x: imgW-labelW, y: 0, width: labelW, height: labelW))
             label.textAlignment = .center
@@ -222,7 +227,7 @@ class PhotoAnnotationView: MKPinAnnotationView {
     }()
     
     fileprivate lazy var backView: UIView = {
-        let view = UIView(frame: CGRect(x: -imgW/2-5, y: -imgW+10-spacing, width: imgW+2*spacing, height: imgW+2*spacing))
+        let view = UIView(frame: CGRect(x: -imgW/2-5, y: -imgW-spacing, width: imgW+2*spacing, height: imgW+2*spacing))
         view.backgroundColor = UIColor.blue
         self.insertSubview(view, at: 0)
         return view
@@ -252,6 +257,7 @@ class PhotoAnnotationView: MKPinAnnotationView {
     }
     
     func setImgStatus(isSelected: Bool) {
+        backView.isHidden = !isSelected
         backView.backgroundColor = isSelected ? UIColor.blue : UIColor.clear
     }
     

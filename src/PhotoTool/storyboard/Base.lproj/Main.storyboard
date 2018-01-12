@@ -58,7 +58,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pmc-a1-HEz">
-                                <rect key="frame" x="62.5" y="218.5" width="250" height="36"/>
+                                <rect key="frame" x="62.5" y="218.5" width="250" height="36.5"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -67,7 +67,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU5-Du-k8P">
-                                <rect key="frame" x="147.5" y="314.5" width="80" height="40"/>
+                                <rect key="frame" x="147.5" y="315" width="80" height="40"/>
                                 <color key="backgroundColor" red="0.46666666670000001" green="0.57647058819999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="I9t-jo-EjC"/>
@@ -133,16 +133,15 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wP3-f6-nYI">
-                                                    <rect key="frame" x="111.5" y="40" width="174.5" height="21"/>
+                                                    <rect key="frame" x="111.5" y="40" width="149.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZH-4Z-tCa">
-                                                    <rect key="frame" x="304" y="35.5" width="30" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZH-4Z-tCa">
+                                                    <rect key="frame" x="279" y="50" width="55" height="0.0"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="tZH-4Z-tCa" secondAttribute="height" id="9Dk-Ip-hFt"/>
-                                                        <constraint firstAttribute="width" constant="30" id="Ii3-2C-z50"/>
+                                                        <constraint firstAttribute="width" constant="55" id="Ii3-2C-z50"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>

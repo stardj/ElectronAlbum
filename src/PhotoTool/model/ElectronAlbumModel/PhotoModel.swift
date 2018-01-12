@@ -2,8 +2,8 @@
 //  PhotoModel.swift
 //  PhotoTool
 //
-//  Created by 江荧辉 on 2018/1/3.
-//  Copyright © 2018年 YingHui Jiang. All rights reserved.
+//  Created by yinghui jiang on 2018/1/3.
+//  Copyright © 2018 year YingHui Jiang. All rights reserved.
 //
 import Foundation
 import CoreLocation

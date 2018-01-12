@@ -2,8 +2,8 @@
 //  ComTools.swift
 //  PhotoTool
 //
-//  Created by 江荧辉 on 2017/11/24.
-//  Copyright © 2017年 YingHui Jiang. All rights reserved.
+//  Created by yinghui jiang on 2017/11/24.
+//  Copyright © 2017 year YingHui Jiang. All rights reserved.
 //
 import UIKit
 import Photos
@@ -45,10 +45,6 @@ class DateTools {
 }
 
 class Tools {
-    class func getNewFont(size: CGFloat) -> UIFont {
-        let font = UIFont.systemFont(ofSize: size * DeviceInfo.ScaleSizeW)
-        return font
-    }
     
     /// 根据id得到图片data
     ///

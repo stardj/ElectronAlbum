@@ -46,11 +46,11 @@
                                 <constraint firstAttribute="width" constant="60" id="nLd-xY-iYC"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="Cancle">
+                            <state key="normal" title="Cancel">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="cancleBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="aY9-UF-PkU"/>
+                                <action selector="cancelBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="aY9-UF-PkU"/>
                             </connections>
                         </button>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggE-dY-SNw">
