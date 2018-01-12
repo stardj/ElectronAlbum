@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gvP-8u-aHb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Afj-XM-gNP">
+            <objects>
+                <viewController id="gvP-8u-aHb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RNg-ss-cZw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7l-QL-wDS">
+                                <rect key="frame" x="121" y="166.5" width="134" height="37"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="fgV-eh-A2T">
+                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="9Og-CC-34m"/>
+                                    <constraint firstAttribute="height" constant="240" id="Zwl-k8-9Uo"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fgV-eh-A2T" firstAttribute="top" secondItem="r7l-QL-wDS" secondAttribute="bottom" constant="10" id="QAk-IU-78h"/>
+                            <constraint firstItem="r7l-QL-wDS" firstAttribute="centerX" secondItem="RNg-ss-cZw" secondAttribute="centerX" id="Ri0-Ni-0c4"/>
+                            <constraint firstItem="fgV-eh-A2T" firstAttribute="centerY" secondItem="RNg-ss-cZw" secondAttribute="centerY" id="c4d-et-F5p"/>
+                            <constraint firstItem="fgV-eh-A2T" firstAttribute="centerX" secondItem="RNg-ss-cZw" secondAttribute="centerX" id="s5s-tD-LFr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UF4-6F-YKF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R4h-MV-yWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36" y="412"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="welcome" width="203" height="187"/>
+    </resources>
+</document>
