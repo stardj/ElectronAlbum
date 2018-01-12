@@ -1,0 +1,1902 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": null,
+      "symbol": "Tools",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 13,
+      "symbol": "DateTools",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 14,
+      "symbol": "DateTools.getNameByDate(timeStap:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 21,
+      "symbol": "DateTools.getCurTimeStamp()",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 27,
+      "symbol": "DateTools.dateToTimeStamp(date:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 32,
+      "symbol": "DateTools.timeStampToStr(timeStamp:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 39,
+      "symbol": "DateTools.dateToStr(date:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 47,
+      "symbol": "Tools",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 68,
+      "symbol": "Tools.minOne(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 76,
+      "symbol": "DeviceInfo",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 77,
+      "symbol": "DeviceInfo.isPad",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 78,
+      "symbol": "DeviceInfo.isPadPro",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 79,
+      "symbol": "DeviceInfo.allowRotation",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 80,
+      "symbol": "DeviceInfo.ScreenHeight",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 81,
+      "symbol": "DeviceInfo.ScreenWidth",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 83,
+      "symbol": "DeviceInfo.ScaleSizeW",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 84,
+      "symbol": "DeviceInfo.ScaleSizeH",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 86,
+      "symbol": "DeviceInfo.ScaleSizeWPad",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 87,
+      "symbol": "DeviceInfo.ScaleSizeHPad",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 89,
+      "symbol": "DeviceInfo.ScreenOriginFrame",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 90,
+      "symbol": "DeviceInfo.AppKeyWindow",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 92,
+      "symbol": "DeviceInfo.isLandscape()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 96,
+      "symbol": "DeviceInfo.getScreenWidth()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 100,
+      "symbol": "DeviceInfo.getScreenHeight()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/ComTools.swift",
+      "line": 104,
+      "symbol": "DeviceInfo.getScreenOriginFrame()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 10,
+      "symbol": "ColorsAry",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 11,
+      "symbol": "ColorsAry.colorBlack6",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 12,
+      "symbol": "ColorsAry.colorTabbar",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 16,
+      "symbol": "UIViewController.setReturnBtn(isShow:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 29,
+      "symbol": "UIViewController.showAlert(title:message:buttonTitle:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 36,
+      "symbol": "UIViewController.setTabBarItem(tag:titleStr:titleSelecteColor:defaultImageStr:selectImageStr:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 56,
+      "symbol": "UIImageView.setImageViewShadow()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 64,
+      "symbol": "UIViewController.setStatusBarStyle(isDefault:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 72,
+      "symbol": "UIViewController.setNavigationBar(isModal:isBackShow:bgImgName:titleName:titleColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 101,
+      "symbol": "UIViewController.returnBtnClickCom()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 105,
+      "symbol": "UIViewController.returnBtnDismiss()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoEx.swift",
+      "line": 109,
+      "symbol": "UIViewController.removeNavigationBarLine()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoHttpManager.swift",
+      "line": 12,
+      "symbol": "PhotoHttpManager",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoHttpManager.swift",
+      "line": 13,
+      "symbol": "PhotoHttpManager.share",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoHttpManager.swift",
+      "line": 15,
+      "symbol": "PhotoHttpManager.boundary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoHttpManager.swift",
+      "line": 72,
+      "symbol": "Media",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoHttpManager.swift",
+      "line": 73,
+      "symbol": "Media.key",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoHttpManager.swift",
+      "line": 74,
+      "symbol": "Media.filename",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoHttpManager.swift",
+      "line": 75,
+      "symbol": "Media.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoHttpManager.swift",
+      "line": 76,
+      "symbol": "Media.mimeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoHttpManager.swift",
+      "line": 80,
+      "symbol": "Data.append(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoPresentAnimator.swift",
+      "line": 12,
+      "symbol": "YHJPresentAnimator",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoPresentAnimator.swift",
+      "line": 13,
+      "symbol": "YHJPresentAnimator.transitionDuration(using:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoPresentAnimator.swift",
+      "line": 36,
+      "symbol": "YHJDismissAnimator",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/PhotoPresentAnimator.swift",
+      "line": 37,
+      "symbol": "YHJDismissAnimator.transitionDuration(using:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/SQL/SQLTable.swift",
+      "line": 12,
+      "symbol": "SQLTable",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/SQL/SQLTable.swift",
+      "line": 107,
+      "symbol": "SQLTable.rowsForColumn(columnName:filter:order:limit:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/SQL/SQLTable.swift",
+      "line": 122,
+      "symbol": "SQLTable.getDifferValues(columnName:filter:order:limit:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/SQL/SQLTable.swift",
+      "line": 273,
+      "symbol": "SQLTable.remove(ary:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/SQL/SQLTable.swift",
+      "line": 327,
+      "symbol": "SQLTable.save(ary:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/SQL/SQLiteDB.swift",
+      "line": 11,
+      "symbol": "SQLITE_DATE",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/SQL/SQLiteDB.swift",
+      "line": 45,
+      "symbol": "SQLiteDB.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/SystemPhotoManager.swift",
+      "line": 15,
+      "symbol": "SystemPhotoManager",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/SystemPhotoManager.swift",
+      "line": 16,
+      "symbol": "SystemPhotoManager.share",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/YHJWebImage.swift",
+      "line": 52,
+      "symbol": "YHJImgCacheCenter",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/YHJWebImage.swift",
+      "line": 53,
+      "symbol": "YHJImgCacheCenter.LoaclChache",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/YHJWebImage.swift",
+      "line": 55,
+      "symbol": "YHJImgCacheCenter.readImgFromCache(timeStamp:isThumbnail:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/common/YHJWebImage.swift",
+      "line": 62,
+      "symbol": "YHJImgCacheCenter.writeImgToCache(data:timeStap:isThumbnail:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": null,
+      "symbol": "PhotoBrowserVC",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 11,
+      "symbol": "PhotoBrowserVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 27,
+      "symbol": "PhotoBrowserVC.collectionView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 29,
+      "symbol": "PhotoBrowserVC.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 35,
+      "symbol": "PhotoBrowserVC.setImgAry(ary:index:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 44,
+      "symbol": "PhotoBrowserVC.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 50,
+      "symbol": "PhotoBrowserVC.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 54,
+      "symbol": "PhotoBrowserVC.viewWillLayoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 58,
+      "symbol": "PhotoBrowserVC.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 63,
+      "symbol": "PhotoBrowserVC.didRotate(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 69,
+      "symbol": "PhotoBrowserVC.collectionView(_:layout:sizeForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 73,
+      "symbol": "PhotoBrowserVC.collectionView(_:numberOfItemsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 77,
+      "symbol": "PhotoBrowserVC.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 87,
+      "symbol": "PhotoBrowserVC.collectionView(_:didSelectItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 99,
+      "symbol": "PhotoBrowserVC.scrollViewWillEndDragging(_:withVelocity:targetContentOffset:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 102,
+      "symbol": "PhotoBrowserVC.scrollViewDidScroll(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 111,
+      "symbol": "PhotoBrowserVC.animationController(forPresented:presenting:source:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/PhotoBrowserVC.swift",
+      "line": 115,
+      "symbol": "PhotoBrowserVC.animationController(forDismissed:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 11,
+      "symbol": "SearchVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 13,
+      "symbol": "SearchVC.topView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 14,
+      "symbol": "SearchVC.tableView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 15,
+      "symbol": "SearchVC.noresultLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 28,
+      "symbol": "SearchVC.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 34,
+      "symbol": "SearchVC.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 54,
+      "symbol": "SearchVC.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 58,
+      "symbol": "SearchVC.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 67,
+      "symbol": "SearchVC.tableView(_:heightForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 71,
+      "symbol": "SearchVC.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 78,
+      "symbol": "SearchVC.searchBarShouldBeginEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 82,
+      "symbol": "SearchVC.searchBarSearchButtonClicked(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 89,
+      "symbol": "SearchVC.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 95,
+      "symbol": "CountrySearBar",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 96,
+      "symbol": "CountrySearBar.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/SearchVC.swift",
+      "line": 109,
+      "symbol": "CountrySearBar.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/WaterfallVC.swift",
+      "line": 11,
+      "symbol": "WaterfallVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/WaterfallVC.swift",
+      "line": 22,
+      "symbol": "WaterfallVC.collectionView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/WaterfallVC.swift",
+      "line": 25,
+      "symbol": "WaterfallVC.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/WaterfallVC.swift",
+      "line": 30,
+      "symbol": "WaterfallVC.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/WaterfallVC.swift",
+      "line": 35,
+      "symbol": "WaterfallVC.setPhotoIdAry(titleStr:ary:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/WaterfallVC.swift",
+      "line": 41,
+      "symbol": "WaterfallVC.didRotate(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/WaterfallVC.swift",
+      "line": 46,
+      "symbol": "WaterfallVC.collectionView(_:didSelectItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/WaterfallVC.swift",
+      "line": 53,
+      "symbol": "WaterfallVC.collectionView(_:numberOfItemsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/WaterfallVC.swift",
+      "line": 57,
+      "symbol": "WaterfallVC.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/WaterfallVC.swift",
+      "line": 69,
+      "symbol": "WaterfallVC.waterFall(_:layout:heightForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/WaterfallVC.swift",
+      "line": 74,
+      "symbol": "WaterfallVC.columnOfWaterFall(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 12,
+      "symbol": "DetailView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 14,
+      "symbol": "DetailView.backView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 15,
+      "symbol": "DetailView.titleTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 16,
+      "symbol": "DetailView.descTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 17,
+      "symbol": "DetailView.dateLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 18,
+      "symbol": "DetailView.mapView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 19,
+      "symbol": "DetailView.scollView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 20,
+      "symbol": "DetailView.addrLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 22,
+      "symbol": "DetailView.setInfo(photo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 41,
+      "symbol": "DetailView.cancelBtnClick(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 45,
+      "symbol": "DetailView.saveBtnClick(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 54,
+      "symbol": "DetailView.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 59,
+      "symbol": "DetailView.mapView(_:viewFor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/comvc/customview/DetailView.swift",
+      "line": 71,
+      "symbol": "Tools.addDetailView(photo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 11,
+      "symbol": "PhotoNotiFicationName",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 12,
+      "symbol": "PhotoNotiFicationName.HidiBottomBar",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 13,
+      "symbol": "PhotoNotiFicationName.BecomeActive",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 16,
+      "symbol": "MainTabVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 18,
+      "symbol": "MainTabVC.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 25,
+      "symbol": "MainTabVC.hideBottomBar(noti:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 32,
+      "symbol": "MainTabVC.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 45,
+      "symbol": "MainTabVC.setBarItems()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 71,
+      "symbol": "MainTabVC.tabBarController(_:shouldSelect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 76,
+      "symbol": "CustomTabBarController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 77,
+      "symbol": "CustomTabBarController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tab/MainTabVC.swift",
+      "line": 81,
+      "symbol": "CustomTabBarController.viewWillLayoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/AlbumVC.swift",
+      "line": 12,
+      "symbol": "AlbumVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/AlbumVC.swift",
+      "line": 13,
+      "symbol": "AlbumVC.tableView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/AlbumVC.swift",
+      "line": 20,
+      "symbol": "AlbumVC.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/AlbumVC.swift",
+      "line": 26,
+      "symbol": "AlbumVC.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/AlbumVC.swift",
+      "line": 49,
+      "symbol": "AlbumVC.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/AlbumVC.swift",
+      "line": 53,
+      "symbol": "AlbumVC.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/AlbumVC.swift",
+      "line": 61,
+      "symbol": "AlbumVC.tableView(_:heightForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/AlbumVC.swift",
+      "line": 65,
+      "symbol": "AlbumVC.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 11,
+      "symbol": "PageTitle",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 12,
+      "symbol": "PageTitle.Home",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 13,
+      "symbol": "PageTitle.Album",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 14,
+      "symbol": "PageTitle.Map",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 15,
+      "symbol": "PageTitle.Me",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 18,
+      "symbol": "HomeVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 53,
+      "symbol": "HomeVC.uploadBtn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 54,
+      "symbol": "HomeVC.deleteBtn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 55,
+      "symbol": "HomeVC.bottomView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 57,
+      "symbol": "HomeVC.deleteBtnClick(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 72,
+      "symbol": "HomeVC.uploadBtnClick(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 98,
+      "symbol": "HomeVC.collectionView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 100,
+      "symbol": "HomeVC.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 108,
+      "symbol": "HomeVC.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 183,
+      "symbol": "HomeVC.takePhotoBtnClick()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 200,
+      "symbol": "HomeVC.imagePickerControllerDidCancel(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 206,
+      "symbol": "HomeVC.imagePickerController(_:didFinishPickingMediaWithInfo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 214,
+      "symbol": "HomeVC.image(image:didFinishSavingWithError:contextInfo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 233,
+      "symbol": "HomeVC.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 237,
+      "symbol": "HomeVC.collectionView(_:numberOfItemsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 242,
+      "symbol": "HomeVC.collectionView(_:layout:sizeForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 246,
+      "symbol": "HomeVC.collectionView(_:viewForSupplementaryElementOfKind:at:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 257,
+      "symbol": "HomeVC.collectionView(_:layout:referenceSizeForHeaderInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 261,
+      "symbol": "HomeVC.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 271,
+      "symbol": "HomeVC.collectionView(_:didSelectItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 304,
+      "symbol": "HomeVC.collectionView(_:layout:insetForSectionAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 311,
+      "symbol": "HomeVC.collectionView(_:layout:minimumLineSpacingForSectionAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/HomeVC.swift",
+      "line": 318,
+      "symbol": "HomeVC.collectionView(_:layout:minimumInteritemSpacingForSectionAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 13,
+      "symbol": "MapVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 15,
+      "symbol": "MapVC.collectionView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 16,
+      "symbol": "MapVC.mapView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 26,
+      "symbol": "MapVC.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 31,
+      "symbol": "MapVC.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 43,
+      "symbol": "MapVC.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 107,
+      "symbol": "MapVC.collectionView(_:layout:sizeForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 111,
+      "symbol": "MapVC.collectionView(_:numberOfItemsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 115,
+      "symbol": "MapVC.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 123,
+      "symbol": "MapVC.collectionView(_:didSelectItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 147,
+      "symbol": "MapVC.mapView(_:viewFor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 167,
+      "symbol": "MapVC.mapView(_:didSelect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 178,
+      "symbol": "PhotoAnnoation",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 179,
+      "symbol": "PhotoAnnoation.coordinate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 180,
+      "symbol": "PhotoAnnoation.photoId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 181,
+      "symbol": "PhotoAnnoation.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 182,
+      "symbol": "PhotoAnnoation.init(coordinate:photoId:title:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 190,
+      "symbol": "PhotoGroupAnnoation",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 192,
+      "symbol": "PhotoGroupAnnoation.coordinate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 194,
+      "symbol": "PhotoGroupAnnoation.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 196,
+      "symbol": "PhotoGroupAnnoation.init(group:isSelect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 209,
+      "symbol": "PhotoAnnotationView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 236,
+      "symbol": "PhotoAnnotationView.annotation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 255,
+      "symbol": "PhotoAnnotationView.changeImg(photoId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 259,
+      "symbol": "PhotoAnnotationView.setImgStatus(isSelected:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/controller/tabItems/MapVC.swift",
+      "line": 264,
+      "symbol": "PhotoAnnotationView.create(mapView:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 12,
+      "symbol": "PhotoModel",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 13,
+      "symbol": "PhotoModel.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 14,
+      "symbol": "PhotoModel.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 16,
+      "symbol": "PhotoModel.dateTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 17,
+      "symbol": "PhotoModel.addr",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 18,
+      "symbol": "PhotoModel.position",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 19,
+      "symbol": "PhotoModel.desc",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 20,
+      "symbol": "PhotoModel.identifier",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 22,
+      "symbol": "PhotoModel.init(id:name:dateTime:addr:position:desc:identifier:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 34,
+      "symbol": "PhotoModel.getPosition()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 42,
+      "symbol": "PhotoModel.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 49,
+      "symbol": "AlbumItem",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 51,
+      "symbol": "AlbumItem.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 52,
+      "symbol": "AlbumItem.count",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 55,
+      "symbol": "AlbumItem.fetchResult",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 57,
+      "symbol": "AlbumItem.init(title:fetchResult:count:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 64,
+      "symbol": "BaseGroup",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 65,
+      "symbol": "BaseGroup.groupTitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 66,
+      "symbol": "BaseGroup.photos",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 67,
+      "symbol": "BaseGroup.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/ElectronAlbumModel/PhotoModel.swift",
+      "line": 68,
+      "symbol": "BaseGroup.init(groupTitle:photos:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 11,
+      "symbol": "AlbumCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 12,
+      "symbol": "AlbumCell.imgView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 13,
+      "symbol": "AlbumCell.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 14,
+      "symbol": "AlbumCell.countLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 16,
+      "symbol": "AlbumCell.setInfo(photoId:titleStr:count:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 23,
+      "symbol": "SearchCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 24,
+      "symbol": "SearchCell.imgView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 25,
+      "symbol": "SearchCell.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 26,
+      "symbol": "SearchCell.addrLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 27,
+      "symbol": "SearchCell.dateLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 28,
+      "symbol": "SearchCell.descLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 30,
+      "symbol": "SearchCell.setInfo(photo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 39,
+      "symbol": "ImageBaseCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 40,
+      "symbol": "ImageBaseCell.imgView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 42,
+      "symbol": "ImageBaseCell.setImg(timeStamp:isThumbnail:isFit:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 50,
+      "symbol": "ImageCellWithSelected",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 51,
+      "symbol": "ImageCellWithSelected.tickImg",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 53,
+      "symbol": "ImageCellWithSelected.setImg(timeStamp:isSelected:isThumbnail:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 58,
+      "symbol": "ImageCellWithSelected.setSelected(isSelect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 63,
+      "symbol": "CollectionHeaderCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 64,
+      "symbol": "CollectionHeaderCell.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 66,
+      "symbol": "CollectionHeaderCell.setInfo(titleStr:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 71,
+      "symbol": "WaterFallLayoutDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 73,
+      "symbol": "WaterFallLayoutDelegate.columnOfWaterFall(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 75,
+      "symbol": "WaterFallLayoutDelegate.waterFall(_:layout:heightForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 79,
+      "symbol": "WaterFallLayout",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 82,
+      "symbol": "WaterFallLayout.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 84,
+      "symbol": "WaterFallLayout.lineSpacing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 86,
+      "symbol": "WaterFallLayout.columnSpacing",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 88,
+      "symbol": "WaterFallLayout.sectionTop",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 94,
+      "symbol": "WaterFallLayout.sectionBottom",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 100,
+      "symbol": "WaterFallLayout.sectionLeft",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 106,
+      "symbol": "WaterFallLayout.sectionRight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 112,
+      "symbol": "WaterFallLayout.sectionInsets",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 119,
+      "symbol": "WaterFallLayout.init(lineSpacing:columnSpacing:sectionInsets:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 126,
+      "symbol": "WaterFallLayout.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 138,
+      "symbol": "WaterFallLayout.collectionViewContentSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 148,
+      "symbol": "WaterFallLayout.prepare()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 167,
+      "symbol": "WaterFallLayout.layoutAttributesForItem(at:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 207,
+      "symbol": "WaterFallLayout.layoutAttributesForElements(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 214,
+      "symbol": "StickyHeadersFlowLayout",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 218,
+      "symbol": "StickyHeadersFlowLayout.shouldInvalidateLayout(forBoundsChange:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 223,
+      "symbol": "StickyHeadersFlowLayout.layoutAttributesForElements(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 270,
+      "symbol": "StickyHeadersFlowLayout.layoutAttributesForSupplementaryView(ofKind:at:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/model/customview/CustomCell.swift",
+      "line": 318,
+      "symbol": "StickyHeadersFlowLayout.boundaries(forSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/other/AppDelegate.swift",
+      "line": 12,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/other/AppDelegate.swift",
+      "line": 14,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/other/AppDelegate.swift",
+      "line": 15,
+      "symbol": "AppDelegate.db",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/other/AppDelegate.swift",
+      "line": 17,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/other/AppDelegate.swift",
+      "line": 26,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/other/AppDelegate.swift",
+      "line": 31,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/other/AppDelegate.swift",
+      "line": 36,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/other/AppDelegate.swift",
+      "line": 40,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/stardj/ElectronAlbum/src/PhotoTool/other/AppDelegate.swift",
+      "line": 47,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/stardj/ElectronAlbum/src"
+}
