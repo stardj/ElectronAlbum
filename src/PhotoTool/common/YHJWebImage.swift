@@ -10,13 +10,13 @@ import UIKit
 import Foundation
 
 extension UIImageView {
-    /// 根据id设置图片
+    /// set image by id
     ///
     /// - Parameters:
     ///   - timeStamp: photoId
-    ///   - isThumbnail: 是否是缩略图
+    ///   - isThumbnail: is thumbnail
     func setImage(timeStamp: Int, isThumbnail: Bool) {
-        //设置默认图片,避免读出图片数据有误
+        // set the default image to avoid image error
         if let data = YHJImgCacheCenter.readImgFromCache(timeStamp: timeStamp, isThumbnail: isThumbnail) {
             self.image=UIImage(data: data)
         } else {
@@ -69,12 +69,12 @@ class YHJImgCacheCenter {
         }
     }
     
-    /// 得到图片缓存路径
+    /// get the image cache path
     ///
     /// - Parameters:
     ///   - timeStamp: photoId
-    ///   - isThumbnail: 是否是缩略图
-    /// - Returns: 图片data
+    ///   - isThumbnail: is thumbnail
+    /// - Returns: image data
     class func getFullCachePath(timeStamp: Int, isThumbnail: Bool)-> String? {
         let chchePath = NSHomeDirectory() + LoaclChache
         let fileManager: FileManager = FileManager.default
@@ -99,12 +99,12 @@ class YHJImgCacheCenter {
     }
     
 
-    /// 删除缓存图片
+    /// delete image cache
     ///
     /// - Parameters:
     ///   - timeStamp: photoId
-    ///   - isThumbnail: 是否是缩略图
-    /// - Returns: 图片data
+    ///   - isThumbnail: is thumbnail
+    /// - Returns: image data
     class func removeAllCache(){
         let chchePath = NSHomeDirectory() + LoaclChache
         let fileManager: FileManager = FileManager.default

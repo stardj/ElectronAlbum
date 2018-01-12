@@ -44,13 +44,14 @@ class PhotoModel: SQLTable {
     }
 }
 
-//相簿列表项
+
+// albums items list option
 class AlbumItem {
-    //相簿名称
+    //albums name
     var title = ""
     var count = 0
     
-    //相簿内的资源
+    //albums resources
     var fetchResult: PHFetchResult<PHAsset>
     
     init(title:String, fetchResult: PHFetchResult<PHAsset>, count: Int){

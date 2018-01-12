@@ -14,11 +14,11 @@ class PhotoHttpManager: NSObject {
     
     let boundary = "Boundary-\(NSUUID().uuidString)"
     
-    /// 根据id下载图片图片
+    /// downlaod image by id
     ///
     /// - Parameters:
     ///   - timeStamp: photoId
-    ///   - isThumbnail: 是否是缩略图
+    ///   - isThumbnail: is thumbnail
     func uploadPicture(chooseAry: [Int], block: @escaping(_ error: String?, _ name: String?)->()) {
         func createDataBody(photo: PhotoModel) -> Data {
             let lineBreak = "\r\n"

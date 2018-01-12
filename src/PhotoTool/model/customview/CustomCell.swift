@@ -69,48 +69,49 @@ class CollectionHeaderCell: UICollectionReusableView {
 }
 
 @objc protocol WaterFallLayoutDelegate {
-    //waterFall的列数
+    //waterFall columns
     @objc optional func columnOfWaterFall(_ collectionView: UICollectionView) -> Int
-    //每个item的高度
+    //each item's height
     @objc optional func waterFall(_ collectionView: UICollectionView, layout waterFallLayout: WaterFallLayout, heightForItemAt indexPath: IndexPath) -> CGFloat
 }
 
 
 class WaterFallLayout: UICollectionViewLayout {
     
-    //代理
+    //dalegate
     weak var delegate: WaterFallLayoutDelegate?
-    //行间距
+    //line space
     @IBInspectable var lineSpacing: CGFloat   = 0
-    //列间距
+    //column space
     @IBInspectable var columnSpacing: CGFloat = 0
-    //section的top
+    //section's top
     @IBInspectable var sectionTop: CGFloat    = 0 {
         willSet {
             sectionInsets.top = newValue
         }
     }
-    //section的Bottom
+    //section's Bottom
     @IBInspectable var sectionBottom: CGFloat  = 0 {
         willSet {
             sectionInsets.bottom = newValue
         }
     }
-    //section的left
+    //section left
     @IBInspectable var sectionLeft: CGFloat   = 0 {
         willSet {
             sectionInsets.left = newValue
         }
     }
-    //section的right
+    //section right
     @IBInspectable var sectionRight: CGFloat  = 0 {
         willSet {
             sectionInsets.right = newValue
         }
     }
-    //section的Insets
+    //section Insets
     @IBInspectable var sectionInsets: UIEdgeInsets      = UIEdgeInsets.zero
-    //每行对应的高度
+    
+    // the height for each lines
     private var columnHeights: [Int: CGFloat]                  = [Int: CGFloat]()
     private var attributes: [UICollectionViewLayoutAttributes] = [UICollectionViewLayoutAttributes]()
     
@@ -165,33 +166,37 @@ class WaterFallLayout: UICollectionViewLayout {
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         if let collectionView = collectionView {
-            //根据indexPath获取item的attributes
+            
+            // get the items' attributes by indexPath
             let att = UICollectionViewLayoutAttributes.init(forCellWith: indexPath)
-            //获取collectionView的宽度
+            //get the width of collectionView
             let width = collectionView.frame.width
             if let columnCount = delegate?.columnOfWaterFall?(collectionView) {
                 guard columnCount > 0 else {
                     return nil
                 }
-                //item的宽度 = (collectionView的宽度 - 内边距与列间距) / 列数
+                //item width = (collectionView width - sectionInsets space & line space) / column sum
                 let totalWidth  = (width - sectionInsets.left - sectionInsets.right - (CGFloat(columnCount) - 1) * columnSpacing)
                 let itemWidth   = totalWidth / CGFloat(columnCount)
-                //获取item的高度，由外界计算得到
+                //get item height by outside caculation
                 let itemHeight  = delegate?.waterFall?(collectionView, layout: self, heightForItemAt: indexPath) ?? 0
-                //找出最短的那一列
+                //find the shortest column
                 var minIndex = 0
                 for column in columnHeights {
                     if column.value < columnHeights[minIndex] ?? 0 {
                         minIndex = column.key
                     }
                 }
-                //根据最短列的列数计算item的x值
+                
+                // caculated the item's x by the shortest column space
                 let itemX  = sectionInsets.left + (columnSpacing + itemWidth) * CGFloat(minIndex)
-                //item的y值 = 最短列的最大y值 + 行间距
+                
+                //item's y = the biggest y of the shortest columns + line space
                 let itemY  = (columnHeights[minIndex] ?? 0) + lineSpacing
-                //设置attributes的frame
+                //set attributes frame
                 att.frame  = CGRect.init(x: itemX, y: itemY, width: itemWidth, height: itemHeight)
-                //更新字典中的最大y值
+                
+                //update the biggest y in dictionary
                 columnHeights[minIndex] = att.frame.maxY
             }
             return att
@@ -204,49 +209,53 @@ class WaterFallLayout: UICollectionViewLayout {
     }
 }
 
-//自定义的具有粘性分组头的Collection View布局类
+
+//customized the sticky headers layout by using collection view
 class StickyHeadersFlowLayout: UICollectionViewFlowLayout {
     
-    //边界发生变化时是否重新布局（视图滚动的时候也会调用）
+    
+    //Relayout when the boundary is changed (The view is also called when the view is scrolling)
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
     
-    //所有元素的位置属性
+    //Location attributes of all elements
     override func layoutAttributesForElements(in rect: CGRect)
         -> [UICollectionViewLayoutAttributes]? {
-            //从父类得到默认的所有元素属性
+            
+            //Get all the default element attributes from the parent class
             guard let layoutAttributes = super.layoutAttributesForElements(in: rect)
                 else { return nil }
             
-            //用于存储元素新的布局属性,最后会返回这个
+            //It is used to store the new layout properties of the element and finally returns this
             var newLayoutAttributes = [UICollectionViewLayoutAttributes]()
-            //存储每个layout attributes对应的是哪个section
+            
+            // Which section is stored for each layout attributes
             let sectionsToAdd = NSMutableIndexSet()
             
-            //循环老的元素布局属性
+            //Circular old element layout attributes
             for layoutAttributesSet in layoutAttributes {
-                //如果元素师cell
+                //if the element is cell
                 if layoutAttributesSet.representedElementCategory == .cell {
-                    //将布局添加到newLayoutAttributes中
+                    //Add the layout to the newLayoutAttributes
                     newLayoutAttributes.append(layoutAttributesSet)
                 } else if layoutAttributesSet.representedElementCategory == .supplementaryView {
-                    //将对应的section储存到sectionsToAdd中
+                    //Store the corresponding section into the sectionsToAdd
                     sectionsToAdd.add(layoutAttributesSet.indexPath.section)
                 }
             }
             
-            //遍历sectionsToAdd，补充视图使用正确的布局属性
+            //Traversing sectionsToAdd, supplemental views use the correct layout properties
             for section in sectionsToAdd {
                 let indexPath = IndexPath(item: 0, section: section)
                 
-                //添加头部布局属性
+                //Add the header layout property
                 if let headerAttributes = self.layoutAttributesForSupplementaryView(ofKind:
                     UICollectionElementKindSectionHeader, at: indexPath) {
                     newLayoutAttributes.append(headerAttributes)
                 }
                 
-                //添加尾部布局属性
+                //Add the tail layout property
                 if let footerAttributes = self.layoutAttributesForSupplementaryView(ofKind:
                     UICollectionElementKindSectionFooter, at: indexPath) {
                     newLayoutAttributes.append(footerAttributes)
@@ -256,84 +265,88 @@ class StickyHeadersFlowLayout: UICollectionViewFlowLayout {
             return newLayoutAttributes
     }
     
-    //补充视图的布局属性(这里处理实现粘性分组头,让分组头始终处于分组可视区域的顶部)
+    //Add the layout properties of the view
+    //this is handled to implement the sticky header,so that the header is always at the top of the group visual area
     override func layoutAttributesForSupplementaryView(ofKind elementKind: String,
                                                        at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        //先从父类获取补充视图的布局属性
+        //Get the layout properties of the supplementary view first from the parent class
         guard let layoutAttributes = super.layoutAttributesForSupplementaryView(ofKind:
             elementKind, at: indexPath) else { return nil }
         
-        //如果不是头部视图则直接返回
+        //Return directly if not the head view
         if elementKind != UICollectionElementKindSectionHeader {
             return layoutAttributes
         }
         
-        //根据section索引，获取对应的边界范围
+        //Get the corresponding boundary range based on the section index
         guard let boundaries = boundaries(forSection: indexPath.section)
             else { return layoutAttributes }
         guard let collectionView = collectionView else { return layoutAttributes }
         
-        //保存视图内入垂直方向的偏移量
+        //Save the offset in the vertical direction in the view
         let contentOffsetY = collectionView.contentOffset.y
-        //补充视图的frame
+        //Frame to supplement the view
         var frameForSupplementaryView = layoutAttributes.frame
         
-        //计算分组头垂直方向的最大最小值
+        //The maximum minimum value for calculating the vertical direction of a packet head
         let minimum = boundaries.minimum - frameForSupplementaryView.height
         let maximum = boundaries.maximum - frameForSupplementaryView.height
         
-        //如果内容区域的垂直偏移量小于分组头最小的位置，则将分组头置于其最小位置
+        //If the vertical offset of the content area is smaller than the minimum position of the packet head,
+        //the group head is placed at its minimum position
         if contentOffsetY < minimum {
             frameForSupplementaryView.origin.y = minimum
         }
-            //如果内容区域的垂直偏移量大于分组头最小的位置，则将分组头置于其最大位置
+        //If the vertical offset of the content area is larger than the minimum position of the packet head,
+        //the group head is placed at its maximum position
         else if contentOffsetY > maximum {
             frameForSupplementaryView.origin.y = maximum
         }
-            //如果都不满足，则说明内容区域的垂直便宜量落在分组头的边界范围内。
-            //将分组头设置为内容偏移量，从而让分组头固定在集合视图的顶部
+        
+        //If they are not satisfied, the vertical cheapest amount of the content area falls within the boundary of the head of the group.
+        //Set the header of the packet to the content offset so that the header is fixed at the top of the collection view
         else {
             frameForSupplementaryView.origin.y = contentOffsetY
         }
         
-        //更新布局属性并返回
+        //Update the layout properties and return
         layoutAttributes.frame = frameForSupplementaryView
         return layoutAttributes
     }
     
-    //根据section索引，获取对应的边界范围（返回一个元组）
+    //Get the corresponding boundary range (return a tuple) according to the section index.
     func boundaries(forSection section: Int) -> (minimum: CGFloat, maximum: CGFloat)? {
-        //保存返回结果
+        //Save the return result
         var result = (minimum: CGFloat(0.0), maximum: CGFloat(0.0))
         
-        //如果collectionView属性为nil，则直接fanhui
+        //If the collectionView attribute is nil, the direct fanhui
         guard let collectionView = collectionView else { return result }
         
-        //获取该分区中的项目数
+        //Get the number of items in the partition
         let numberOfItems = collectionView.numberOfItems(inSection: section)
         
-        //如果项目数位0，则直接返回
+        //If the project is 0, it returns directly
         guard numberOfItems > 0 else { return result }
         
-        //从流布局属性中获取第一个、以及最后一个项的布局属性
+        //Get the first and the last item layout attributes from flow layout attributes
         let first = IndexPath(item: 0, section: section)
         let last = IndexPath(item: (numberOfItems - 1), section: section)
         if let firstItem = layoutAttributesForItem(at: first),
             let lastItem = layoutAttributesForItem(at: last) {
-            //分别获区边界的最小值和最大值
+            //The minimum and maximum value of the region boundary respectively
             result.minimum = firstItem.frame.minY
             result.maximum = lastItem.frame.maxY
             
-            //将分区都的高度考虑进去，并调整
+            //Take the height of the partition into consideration and adjust
             result.minimum -= headerReferenceSize.height
             result.maximum -= headerReferenceSize.height
             
-            //将分区的内边距考虑进去，并调整
+            //Take the inner margins of the partition into consideration and adjust
             result.minimum -= sectionInset.top
             result.maximum += (sectionInset.top + sectionInset.bottom)
         }
         
-        //返回最终的边界值
+        //Return the final boundary value
         return result
     }
 }

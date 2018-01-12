@@ -118,7 +118,7 @@ class SQLTable:NSObject {
         return self.rowsFor(sql:sql)
     }
     
-    // 查找一个字段下，不同重复的值
+    // find the next field which are not appear before
     class func getDifferValues(columnName: String, filter:String="", order:String="", limit:Int=0) -> [String] {
         let db = SQLiteDB.shared
         var sql = "SELECT DISTINCT \(columnName) FROM \(table)"
@@ -241,7 +241,7 @@ class SQLTable:NSObject {
         return 0
     }
     
-    // 得到该列中，不同值的数量
+    // get the sum of different values in this column
     /// Run an SQL query with (parameters) parameters and returns an array of dictionaries where the keys are the column names
     ///
     /// - Parameters:

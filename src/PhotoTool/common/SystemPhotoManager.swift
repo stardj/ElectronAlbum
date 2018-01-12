@@ -14,10 +14,10 @@ import AssetsLibrary
 
 class SystemPhotoManager {
     static let share: SystemPhotoManager = SystemPhotoManager()
-    /// 带缓存的图片管理对象
+    /// image cache manager
     let imgMg = PHImageManager()
-    
-    /// 是否获得拍照权限
+
+    /// get the permission of camera or not
     ///
     /// - Parameters:
     /// - return:
@@ -25,7 +25,7 @@ class SystemPhotoManager {
         return UIImagePickerController.isSourceTypeAvailable(.camera)
     }
     
-    /// 是否获得相册权限
+    /// get the permission of the photo or not
     ///
     /// - Parameters:
     /// - return:
@@ -33,7 +33,7 @@ class SystemPhotoManager {
         return UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
     }
     
-    /// 得到系统相簿
+    /// get the permission of the system albums or not
     ///
     /// - Parameters:
     /// - return:
@@ -46,7 +46,7 @@ class SystemPhotoManager {
                 resultsOptions.predicate = NSPredicate(format: "mediaType = %d",PHAssetMediaType.image.rawValue)
                 guard let c = collection[i] as? PHAssetCollection, let itemTitle = c.localizedTitle else { return [] }
                 let assetsFetchResult = PHAsset.fetchAssets(in: c ,options: resultsOptions)
-                //没有图片的空相簿不显示
+                //do not display if the albums is empty
                 if assetsFetchResult.count > 0{
                     itemAry.append(AlbumItem(title: itemTitle, fetchResult: assetsFetchResult, count: assetsFetchResult.count))
                 }
@@ -67,7 +67,7 @@ class SystemPhotoManager {
         block([])
     }
     
-    /// 检查更新数据库，将系统图片与本地数据库同步
+    /// check the database updating, syn the system image to the local databases'
     ///
     /// - Parameters:
     /// - return:
@@ -125,10 +125,10 @@ class SystemPhotoManager {
         }
     }
     
-    /// 得到缩略图
+    /// get the thumbnail image
     ///
     /// - Parameters:
-    /// - return: block：返回缩略图Image
+    /// - return: block：return the thumbnail Image
     func getThumbnailImg(asset: PHAsset, size: CGSize, block: @escaping(_ img: UIImage?)->()) {
         let imageRequestOption = PHImageRequestOptions()
         imageRequestOption.isSynchronous = true
@@ -141,7 +141,8 @@ class SystemPhotoManager {
         }
     }
     
-    /// 根据图片identifier，得到原图得到原图， 同时保存到本地
+    
+    /// getting the org image and saving to the local by identifier
     ///
     /// - Parameters:
     /// - return:
@@ -167,7 +168,8 @@ class SystemPhotoManager {
         }
     }
     
-    /// 根据图片identifier，得到系统图片PHAsset
+    
+    /// get the PHAsset of system image by identifier
     ///
     /// - Parameters:
     /// - return:
@@ -178,7 +180,8 @@ class SystemPhotoManager {
         return nil
     }
     
-    /// 得到所有的系统图片
+    
+    /// get the whole system images
     ///
     /// - Parameters:
     /// - return:
@@ -192,7 +195,8 @@ class SystemPhotoManager {
     }
     
     
-    /// 将系统图片转换为PhotoModel，保存到app数据库
+    
+    /// transfer the system image to PhotoModel and save them to the app database
     ///
     /// - Parameters:
     /// - return:
@@ -207,7 +211,8 @@ class SystemPhotoManager {
         })
     }
     
-    /// 将系统图片转换为PhotoModel，保存到app数据库
+    
+    /// transfer the system image to PhotoModel and saving them to the app database
     ///
     /// - Parameters:
     /// - return:
@@ -231,7 +236,8 @@ class SystemPhotoManager {
     
     
     
-    /// 保存系统图片的缩略图到本地沙盒
+    
+    /// save the system thumbnail images ti the local cells
     ///
     /// - Parameters:
     /// - return:
@@ -243,7 +249,8 @@ class SystemPhotoManager {
         }
     }
     
-    /// 将单个系统图片转换为PhotoModel
+    
+    /// transfer the single system image to the PhotoModel
     ///
     /// - Parameters:
     /// - return:
@@ -268,7 +275,8 @@ class SystemPhotoManager {
         }
     }
     
-    /// 得到CLLocation的地址描述
+    
+    /// get the address describtion of CLLocation
     ///
     /// - Parameters:
     /// - return:
@@ -283,7 +291,8 @@ class SystemPhotoManager {
         }
     }
     
-    /// 将系统图片数组转换为PhotoModel数组
+    
+    /// transfer the system images array to PhotoModel array
     ///
     /// - Parameters:
     /// - return:
@@ -303,7 +312,8 @@ class SystemPhotoManager {
         }
     }
     
-    /// 删除系统图片数组
+    
+    /// delete the system images array
     ///
     /// - Parameters:
     /// - return:

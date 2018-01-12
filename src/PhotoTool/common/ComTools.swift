@@ -9,7 +9,7 @@ import UIKit
 import Photos
 
 
-// 时间相关的处理
+// time handler
 class DateTools {
     class func getNameByDate(timeStap: Int) -> String {
         let dateformatter = DateFormatter()
@@ -46,12 +46,12 @@ class DateTools {
 
 class Tools {
     
-    /// 根据id得到图片data
+    /// get the image data by id
     ///
     /// - Parameters:
     ///   - timeStamp: photoId
-    ///   - isThumbnail: 是否是缩略图
-    /// - Returns: 图片data
+    ///   - isThumbnail: is thumbnail
+    /// - Returns: image data
     class func getImage(timeStamp: Int, isThumbnail: Bool) -> UIImage? {
         if let data = YHJImgCacheCenter.readImgFromCache(timeStamp: timeStamp, isThumbnail: isThumbnail) {
             return UIImage(data: data)
